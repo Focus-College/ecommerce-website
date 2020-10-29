@@ -14,11 +14,6 @@ export default function EcommerceWebsite( props:{} ){
         <div className="ecommerce">
             <BrowserRouter>
 
-                <Link to="/">Home</Link> |
-                <Link to="/cart">Shopping Cart</Link> |
-                <Link to="/wishlist">Wishlist</Link> |
-                <Link to="/help">Help</Link>
-
                 <Switch>
                     <Route path="/wishlist" component={Wishlist} />
                     <Route path="/help" component={Help} />
