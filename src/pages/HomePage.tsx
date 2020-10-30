@@ -9,9 +9,9 @@ export default function HomePage( props:{} ){
         
         <FeatureSlider />
 
-        <HorizontalProductList />
+        <HorizontalProductList title="Clearance Products" />
 
-        <HorizontalProductList filter />
+        <HorizontalProductList filter rows={2} />
 
     </MainLayout>;
 
