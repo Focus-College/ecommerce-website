@@ -8,10 +8,16 @@
             margin-bottom: 15px;
         }
 
-        &:last-child{
+        .card-deck:last-child {
             margin-bottom: 0px;
         }
 
+    }
+}
+
+.dark {
+    .product-list-product {
+        background-color: #333;
     }
 }
 
@@ -22,4 +28,13 @@
         margin-right: 4px;
     }
 
+}
+
+.tag {
+    &-health {
+        background-color: pink;
+    }
+    &-mens-health {
+        background-color: royalblue;
+    }
 }
