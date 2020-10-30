@@ -1,31 +1,228 @@
 [
-    { 
-        "image": "nivea/products/aloe-hydro.jpg",
-        "productNo": "HE-NV-001", 
-        "name": "Aloe Hydration", 
-        "brand": "nivea", 
-        "price":"4.99", 
-        "categories": [
-            "health"
-        ] 
+    {
+      "image": "images/nivea/products/aloe-hydro.jpg",
+      "productNo": "HE-NV-001",
+      "name": "Aloe Hydration",
+      "brand": "nivea",
+      "price": "4.99",
+      "categories": [
+        "health"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
-    { "productNo": "HE-NV-002", "name": "Creme Care", "brand": "nivea", "price":"3.95", "categories": ["health"] },
-    { "productNo": "HE-NV-003", "name": "Mens Shaving Gel", "brand": "nivea", "price":"6.99", "categories": ["health","mens-health"] },
-    { "productNo": "HE-NV-004", "name": "Creme", "brand": "nivea", "price":"4.45", "categories": ["health"] },
-    { "productNo": "HE-NV-005", "name": "Pearl & Beauty", "brand": "nivea", "price":"3.45", "categories": ["health"] },
-    { "productNo": "HE-NV-006", "name": "Total Face Cleanup", "brand": "nivea", "price":"2.99", "categories": ["health"] },
-    { "productNo": "HE-NV-007", "name": "Whitening Smooth Skin", "brand": "nivea", "price":"16.99", "categories": ["health"] },
-    { "productNo": "SP-RA-001", "name": "Baseball Glove", "brand": "Rawlings", "price":"45.45", "categories": ["sports"] },
-    { "productNo": "SP-SP-001", "name": "Basketball Net", "brand": "Spalding", "price":"199.95", "categories": ["sports"] },
-    { "productNo": "SP-XT-001", "name": "Cycle Machine", "brand": "Xterra", "price":"1995.95", "categories": ["sports","fitness"] },
-    { "productNo": "SP-BA-001", "name": "Goalie Mask", "brand": "Bauer", "price":"249.95", "categories": ["sports"] },
-    { "productNo": "SP-XX-001", "name": "Mini Soccer Net", "brand": "", "price":"54.95", "categories": ["sports"] },
-    { "productNo": "SP-PU-001", "name": "Workout Stretchers", "brand": "Pure", "price":"69.95", "categories": ["sports","fitness"] },
-    { "productNo": "TK-AP-001", "name": "Multi-Charger", "brand": "Apple", "price":"119.95", "categories": ["tech"] },
-    { "productNo": "TK-FB-001", "name": "FitBit", "brand": "FitBit", "price":"299.99", "categories": ["tech","fitness"] },
-    { "productNo": "TK-BD-001", "name": "Mic", "brand": "Beats by Dre", "price":"145.95", "categories": ["tech"] },
-    { "productNo": "TK-RA-001", "name": "Mouse", "brand": "Razer", "price":"49.95", "categories": ["tech","computers"] },
-    { "productNo": "TK-RO-001", "name": "Robot Vacuum", "brand": "Robot", "price":"399.99", "categories": ["tech","household"] },
-    { "productNo": "TK-AN-001", "name": "Speaker", "brand": "Anker", "price":"54.45", "categories": ["tech"] },
-    { "productNo": "TK-MS-001", "name": "XBOX", "brand": "Microsoft", "price":"399.45", "categories": ["tech"] }
-]
+    {
+      "image": "images/nivea/products/creme-care.jpg",
+        "productNo": "HE-NV-002",
+      "name": "Creme Care",
+      "brand": "nivea",
+      "price": "3.95",
+      "categories": [
+        "health"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/nivea/products/men-shaving-gel.jpg",
+      "productNo": "HE-NV-003",
+      "name": "Mens Shaving Gel",
+      "brand": "nivea",
+      "price": "6.99",
+      "categories": [
+        "health",
+        "mens-health"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/nivea/products/nivea-creme.jpg",
+      "productNo": "HE-NV-004",
+      "name": "Creme",
+      "brand": "nivea",
+      "price": "4.45",
+      "categories": [
+        "health"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/nivea/products/pearl-and-beauty.jpg",
+      "productNo": "HE-NV-005",
+      "name": "Pearl & Beauty",
+      "brand": "nivea",
+      "price": "3.45",
+      "categories": [
+        "health"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/nivea/products/total-face-cleanup.jpg",
+      "productNo": "HE-NV-006",
+      "name": "Total Face Cleanup",
+      "brand": "nivea",
+      "price": "2.99",
+      "categories": [
+        "health"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/nivea/products/whitening-smooth-skin.jpg",
+      "productNo": "HE-NV-007",
+      "name": "Whitening Smooth Skin",
+      "brand": "nivea",
+      "price": "16.99",
+      "categories": [
+        "health"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/sports/products/baseball-glove.jpg",
+      "productNo": "SP-RA-001",
+      "name": "Baseball Glove",
+      "brand": "Rawlings",
+      "price": "45.45",
+      "categories": [
+        "sports"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/sports/products/basketball-net.jpg",
+      "productNo": "SP-SP-001",
+      "name": "Basketball Net",
+      "brand": "Spalding",
+      "price": "199.95",
+      "categories": [
+        "sports"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/sports/products/cycle-machine.jpg",
+      "productNo": "SP-XT-001",
+      "name": "Cycle Machine",
+      "brand": "Xterra",
+      "price": "1995.95",
+      "categories": [
+        "sports",
+        "fitness"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/sports/products/goalie-mask.jpg",
+      "productNo": "SP-BA-001",
+      "name": "Goalie Mask",
+      "brand": "Bauer",
+      "price": "249.95",
+      "categories": [
+        "sports"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/sports/products/net.jpg",
+      "productNo": "SP-XX-001",
+      "name": "Mini Soccer Net",
+      "brand": "",
+      "price": "54.95",
+      "categories": [
+        "sports"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/sports/products/workout-stretchers.jpg",
+      "productNo": "SP-PU-001",
+      "name": "Workout Stretchers",
+      "brand": "Pure",
+      "price": "69.95",
+      "categories": [
+        "sports",
+        "fitness"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/tech/products/charger.jpg",
+      "productNo": "TK-AP-001",
+      "name": "Multi-Charger",
+      "brand": "Apple",
+      "price": "119.95",
+      "categories": [
+        "tech"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/tech/products/gitbit.jpg",
+      "productNo": "TK-FB-001",
+      "name": "FitBit",
+      "brand": "FitBit",
+      "price": "299.99",
+      "categories": [
+        "tech",
+        "fitness"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/tech/products/mic.jpg",
+      "productNo": "TK-BD-001",
+      "name": "Mic",
+      "brand": "Beats by Dre",
+      "price": "145.95",
+      "categories": [
+        "tech"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/tech/products/mouse.jpg",
+      "productNo": "TK-RA-001",
+      "name": "Mouse",
+      "brand": "Razer",
+      "price": "49.95",
+      "categories": [
+        "tech",
+        "computers"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/tech/products/robot-vacuum.jpg",
+      "productNo": "TK-RO-001",
+      "name": "Robot Vacuum",
+      "brand": "Robot",
+      "price": "399.99",
+      "categories": [
+        "tech",
+        "household"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/tech/products/speaker.jpg",
+      "productNo": "TK-AN-001",
+      "name": "Speaker",
+      "brand": "Anker",
+      "price": "54.45",
+      "categories": [
+        "tech"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    },
+    {
+        "image": "images/tech/products/xbox.jpg",
+      "productNo": "TK-MS-001",
+      "name": "XBOX",
+      "brand": "Microsoft",
+      "price": "399.45",
+      "categories": [
+        "tech"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
+    }
+  ]
