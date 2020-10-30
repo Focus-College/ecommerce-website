@@ -1,3 +1,20 @@
+.horizontal-product-list {
+    .card-deck {
+        
+        margin-bottom: 15px;
+        margin-top: 15px;
+        
+        .product-list-product {
+            margin-bottom: 15px;
+        }
+
+        &:last-child{
+            margin-bottom: 0px;
+        }
+
+    }
+}
+
 .product-list-product {
 
     .badge {
