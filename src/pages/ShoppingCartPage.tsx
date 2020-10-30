@@ -7,6 +7,6 @@ export default function Homepage( props:{} ){
     return <MainLayout>
         <h1>Shopping Cart Page</h1>
         <Link to="/cart/checkout">Checkout</Link>
-    </MainLayout>
+    </MainLayout>;
 
 }

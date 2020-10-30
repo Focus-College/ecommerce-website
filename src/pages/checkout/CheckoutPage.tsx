@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router';
 import CheckoutSuccess from './CheckoutSuccessPage';
 import CheckoutFailure from './CheckoutFailedPage';
 import { Link } from 'react-router-dom';
-import MainLayout from '../../layouts/MainLayout'
+import MainLayout from '../../layouts/MainLayout';
 
 export default function CheckoutPage( props:{} ){
 

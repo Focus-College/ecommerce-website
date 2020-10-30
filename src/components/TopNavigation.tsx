@@ -12,11 +12,10 @@ export default function TopNavigation( props:{} ){
                     <LinkContainer exact to="/"><Nav.Link>Home</Nav.Link></LinkContainer>
                 </Nav>
                 <Nav>
-
                     <LinkContainer to="/wishlist"><Nav.Link>Wishlist</Nav.Link></LinkContainer>
                     <LinkContainer to="/cart" className="ml-2">
-                    <Button variant="warning">Your cart has 0 items</Button>
-                    </LinkContainer>
+                        <Button variant="warning" block>Your Cart has 0 Items</Button>
+                    </LinkContainer> 
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
