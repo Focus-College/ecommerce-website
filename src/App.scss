@@ -1,25 +1,27 @@
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 
+$footerHeight: 250px;
+
 .main {
 
     height: 100%;
+    position: relative;
     background-color: #EEE;
+    padding: 0 0 $footerHeight 0;
 
 }
 
-.test {
-    height: 10%;
-    background-color: #AAA;
+footer {
+    
+    position: absolute;
+    width: 100%;
+    background-color: #343a40;
+    min-height: $footerHeight;
+    bottom: 0;
+    padding-top: 15px;
 }
 
-.img-small {
-    scale: 10%;
-}
-
-.cart {
-    scale: 120%
-}
-
-.pangram {
-    font-size: 125%;
+.scaffold-helper{
+    min-height: 100px;
+    background-color: hotpink;
 }
