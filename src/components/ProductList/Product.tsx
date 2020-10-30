@@ -1,20 +1,31 @@
+import { getValueFromDenormalizedStringPath } from '../../helpers/getValueFromDenormalizedStringPath';
+import Images from '../../images';
+
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Badge, Card } from 'react-bootstrap';
+import { IProduct } from './HorizontalProductList';
+import './style.scss';
 
-export default function Product( props:{} ){
+export default function Product( props:IProduct ){
 
-    return <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
-        <Card.Body>
-        <Card.Title>Card title</Card.Title>
-        <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in to
-            additional content. This content is a little bit longer.
-        </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-        <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
-    </Card>;
+    return (
+        <Card className="product-list-product">
+            { props.image && <Card.Img variant="top" src={getValueFromDenormalizedStringPath(Images, props.image)} /> }
+            <Card.Body>
+                <Card.Title>{props.name}</Card.Title>
+                <Card.Text>
+                    {props.description}
+                </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+                <div>
+                    {props.categories.map( category => {
+                        return <Badge variant="info">{category}</Badge>
+                    })}
+                </div>
+                <small className="text-muted">Product: {props.productNo}</small>
+            </Card.Footer>
+        </Card>
+    );
 
 }
