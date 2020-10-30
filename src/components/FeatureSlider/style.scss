@@ -1,0 +1,27 @@
+$carouselHeight: 425px;
+
+.featureSlider {
+
+    max-height: $carouselHeight;
+
+    .carousel-inner {
+        
+        max-height: $carouselHeight;
+        
+        img {
+
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+    
+        }
+
+        .carousel-caption {
+            display:none;
+            top: 0;
+            bottom: auto;
+        }
+
+    }
+
+}

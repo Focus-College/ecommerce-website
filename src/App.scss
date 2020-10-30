@@ -4,7 +4,7 @@ $footerHeight: 250px;
 
 .main {
 
-    height: 100%;
+    min-height: 100%;
     position: relative;
     background-color: #EEE;
     padding: 0 0 $footerHeight 0;
@@ -17,7 +17,15 @@ footer {
     width: 100%;
     background-color: #343a40;
     min-height: $footerHeight;
-    vertical-align: bottom;
     bottom: 0;
+    padding-top: 15px;
+
+}
+
+.scaffoldHelper {
+
+    min-height: 100px;
+    padding: 5px;
+    background-color: rgba(255, 192, 203, 0.25);
 
 }
