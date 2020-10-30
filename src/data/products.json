@@ -11,7 +11,8 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
-      "productNo": "HE-NV-002",
+      "image": "images/nivea/products/creme-care.jpg",
+        "productNo": "HE-NV-002",
       "name": "Creme Care",
       "brand": "nivea",
       "price": "3.95",
@@ -21,6 +22,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/nivea/products/men-shaving-gel.jpg",
       "productNo": "HE-NV-003",
       "name": "Mens Shaving Gel",
       "brand": "nivea",
@@ -32,6 +34,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/nivea/products/nivea-creme.jpg",
       "productNo": "HE-NV-004",
       "name": "Creme",
       "brand": "nivea",
@@ -42,6 +45,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/nivea/products/pearl-and-beauty.jpg",
       "productNo": "HE-NV-005",
       "name": "Pearl & Beauty",
       "brand": "nivea",
@@ -52,6 +56,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/nivea/products/total-face-cleanup.jpg",
       "productNo": "HE-NV-006",
       "name": "Total Face Cleanup",
       "brand": "nivea",
@@ -62,6 +67,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/nivea/products/whitening-smooth-skin.jpg",
       "productNo": "HE-NV-007",
       "name": "Whitening Smooth Skin",
       "brand": "nivea",
@@ -72,6 +78,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/sports/products/baseball-glove.jpg",
       "productNo": "SP-RA-001",
       "name": "Baseball Glove",
       "brand": "Rawlings",
@@ -82,6 +89,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/sports/products/basketball-net.jpg",
       "productNo": "SP-SP-001",
       "name": "Basketball Net",
       "brand": "Spalding",
@@ -92,6 +100,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/sports/products/cycle-machine.jpg",
       "productNo": "SP-XT-001",
       "name": "Cycle Machine",
       "brand": "Xterra",
@@ -103,6 +112,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/sports/products/goalie-mask.jpg",
       "productNo": "SP-BA-001",
       "name": "Goalie Mask",
       "brand": "Bauer",
@@ -113,6 +123,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/sports/products/net.jpg",
       "productNo": "SP-XX-001",
       "name": "Mini Soccer Net",
       "brand": "",
@@ -123,6 +134,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/sports/products/workout-stretchers.jpg",
       "productNo": "SP-PU-001",
       "name": "Workout Stretchers",
       "brand": "Pure",
@@ -134,6 +146,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/tech/products/charger.jpg",
       "productNo": "TK-AP-001",
       "name": "Multi-Charger",
       "brand": "Apple",
@@ -144,6 +157,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/tech/products/gitbit.jpg",
       "productNo": "TK-FB-001",
       "name": "FitBit",
       "brand": "FitBit",
@@ -155,6 +169,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/tech/products/mic.jpg",
       "productNo": "TK-BD-001",
       "name": "Mic",
       "brand": "Beats by Dre",
@@ -165,6 +180,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/tech/products/mouse.jpg",
       "productNo": "TK-RA-001",
       "name": "Mouse",
       "brand": "Razer",
@@ -176,6 +192,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/tech/products/robot-vacuum.jpg",
       "productNo": "TK-RO-001",
       "name": "Robot Vacuum",
       "brand": "Robot",
@@ -187,6 +204,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/tech/products/speaker.jpg",
       "productNo": "TK-AN-001",
       "name": "Speaker",
       "brand": "Anker",
@@ -197,6 +215,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet neque efficitur, luctus velit ut, sagittis quam. Orci varius natoque penatibus et magnis dis."
     },
     {
+        "image": "images/tech/products/xbox.jpg",
       "productNo": "TK-MS-001",
       "name": "XBOX",
       "brand": "Microsoft",
