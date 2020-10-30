@@ -43,7 +43,7 @@ export default function HorizontalProductList( props:{
         { props.filter && <ProductFilter /> }
 
         { productRows.map( row => {
-            return <CardDeck>
+            return <CardDeck className="deck">
                 { row.map( productData => {
                     return <Product {...productData} />
                 })}

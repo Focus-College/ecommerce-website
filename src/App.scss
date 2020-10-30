@@ -6,7 +6,6 @@ $footerHeight: 250px;
 
     min-height: 100%;
     position: relative;
-    background-color: #EEE;
     padding: 0 0 $footerHeight 0;
 
 }
@@ -15,7 +14,6 @@ footer {
     
     position: absolute;
     width: 100%;
-    background-color: #343a40;
     min-height: $footerHeight;
     bottom: 0;
     padding-top: 15px;

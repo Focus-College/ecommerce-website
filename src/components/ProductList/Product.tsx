@@ -11,9 +11,9 @@ export default function Product( props:IProduct ){
     return (
         <Card className="product-list-product">
             { props.image && <Card.Img variant="top" src={getValueFromDenormalizedStringPath(Images, props.image)} /> }
-            <Card.Body>
-                <Card.Title>{props.name}</Card.Title>
-                <Card.Text>
+            <Card.Body className="product-list-card">
+                <Card.Title className="product-list-title">{props.name}</Card.Title>
+                <Card.Text className="product-list-desc">
                     {props.description}
                 </Card.Text>
             </Card.Body>
