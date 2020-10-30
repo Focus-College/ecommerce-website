@@ -1,8 +1,13 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useEffect, useState } from 'react';
 import TopNavigation from '../components/TopNavigation';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Button } from 'react-bootstrap';
+
+interface IClicks {
+    clicks: number;
+}
 
 export default function MainLayout( props:PropsWithChildren<{}> ){
+
 
     return <>
         <Container className="main">
@@ -16,9 +21,12 @@ export default function MainLayout( props:PropsWithChildren<{}> ){
                     {props.children}
                 </Col>
             </Row>
-            <footer>
+            <Col>
+            <footer><Button variant="primary">
                 Footer
+                </Button>
             </footer>
+            </Col>
         </Container>
     </>;
 
