@@ -1,8 +1,23 @@
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 
+$footerHeight: 250px;
+
 .main {
 
     height: 100%;
+    position: relative;
     background-color: #EEE;
+    padding: 0 0 $footerHeight 0;
+
+}
+
+footer {
+    
+    position: absolute;
+    width: 100%;
+    background-color: #343a40;
+    min-height: $footerHeight;
+    vertical-align: bottom;
+    bottom: 0;
 
 }
