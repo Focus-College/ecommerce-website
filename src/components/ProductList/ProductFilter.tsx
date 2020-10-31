@@ -2,13 +2,14 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { Col, Form, Row } from 'react-bootstrap';
 import { ISearchFilter } from './HorizontalProductList';
-import { categoriesState } from './product.recoil';
+import { categoriesState, brandsState } from './product.recoil';
 
 export default function ProductFilter( props:{
     searchDispatch: ( searchFilter:ISearchFilter ) => void
 } ){
 
     const categories = useRecoilValue<string[]>(categoriesState);
+    const brands = useRecoilValue<string[]>(brandsState);
     const [ searchTerm, setSearchTerm ] = useState("");
     const onChangeSearchTerm = (e:ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
@@ -26,7 +27,7 @@ export default function ProductFilter( props:{
                 <Col>
                     <Form.Control as="select" defaultValue="Choose...">
                         <option>Filter by Brand</option>
-                        <option></option>
+                        { categories.map(( brands:string ) => <option>{brands}</option> )}
                     </Form.Control>
                 </Col>
                 <Col>
