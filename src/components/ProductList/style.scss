@@ -6,3 +6,23 @@
     }
 
 }
+
+.test {
+    background-color: rgba(190, 199, 198, 0.3);
+}
+
+.descfont {
+    font-family: cursive;
+}
+
+.tag {
+    &-health {
+        background-color: #95f795;
+        border: 1px black;
+    }
+
+    &-mens-health {
+        background-color: lightgrey;
+        border: 1px black;
+    }
+}

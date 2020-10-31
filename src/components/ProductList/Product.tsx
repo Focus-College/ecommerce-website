@@ -11,16 +11,16 @@ export default function Product( props:IProduct ){
     return (
         <Card className="product-list-product">
             { props.image && <Card.Img variant="top" src={getValueFromDenormalizedStringPath(Images, props.image)} /> }
-            <Card.Body>
+            <Card.Body className="test">
                 <Card.Title>{props.name}</Card.Title>
-                <Card.Text>
+                <Card.Text className="descfont">
                     {props.description}
                 </Card.Text>
             </Card.Body>
             <Card.Footer>
                 <div>
                     {props.categories.map( category => {
-                        return <Badge variant="info">{category}</Badge>
+                        return <Badge className={`tag-${category}`}>{category}</Badge>
                     })}
                 </div>
                 <small className="text-muted">Product: {props.productNo}</small>
