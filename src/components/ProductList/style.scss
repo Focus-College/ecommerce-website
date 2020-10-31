@@ -1,3 +1,26 @@
+.horizontal-product-list {
+    .card-deck {
+        
+        margin-bottom: 15px;
+        margin-top: 15px;
+        
+        .product-list-product {
+            margin-bottom: 15px;
+        }
+
+        .card-deck:last-child {
+            margin-bottom: 0px;
+        }
+
+    }
+}
+
+.dark {
+    .product-list-product {
+        background-color: #333;
+    }
+}
+
 .product-list-product {
 
     .badge {
@@ -5,4 +28,13 @@
         margin-right: 4px;
     }
 
+}
+
+.tag {
+    &-health {
+        background-color: pink;
+    }
+    &-mens-health {
+        background-color: royalblue;
+    }
 }
