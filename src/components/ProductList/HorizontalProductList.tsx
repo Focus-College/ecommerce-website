@@ -39,11 +39,21 @@ export default function HorizontalProductList( props:{
 
         const innerProductList = [ ...productsList ].filter(( product ) => {
 
+            let found = true;
+            
             if(searchFilter?.name){
-                return product.name.includes( searchFilter.name );
+                found = product.name.includes( searchFilter.name );
             }
 
-            return true;
+            if(searchFilter?.brand){
+                found = found && product.brand === searchFilter.brand;
+            }
+
+            if(searchFilter?.category){
+                found = found && product.categories.includes(searchFilter.category);
+            }
+
+            return found;
 
         });
         const rows = [];
