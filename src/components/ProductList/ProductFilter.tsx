@@ -26,7 +26,7 @@ export default function ProductFilter( props:{
                 <Col>
                     <Form.Control as="select" defaultValue="Choose...">
                         <option>Filter by Brand</option>
-                        <option></option>
+                        { categories.map(( brand:string ) => <option>{brand}</option> )}
                     </Form.Control>
                 </Col>
                 <Col>

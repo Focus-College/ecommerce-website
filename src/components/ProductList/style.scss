@@ -30,27 +30,6 @@
 
 }
 
-<<<<<<< HEAD
-.test {
-    background-color: rgba(190, 199, 198, 0.3);
-}
-
-.descfont {
-    font-family: cursive;
-}
-
-.tag {
-    &-health {
-        background-color: #95f795;
-        border: 1px black;
-    }
-
-    &-mens-health {
-        background-color: lightgrey;
-        border: 1px black;
-    }
-}
-=======
 .tag {
     &-health {
         background-color: pink;
@@ -59,4 +38,3 @@
         background-color: royalblue;
     }
 }
->>>>>>> 104e828d12256e443cbb0ed1729087006fb79f7a
