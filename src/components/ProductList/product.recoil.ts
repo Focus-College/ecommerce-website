@@ -2,18 +2,11 @@ import { atom, selector } from 'recoil';
 import { IProduct } from './HorizontalProductList';
 
 import productsList from '../../data/products.json';
-import brandsList from '../../data/products.json';
 
 export const productListState = atom({
     key: 'productList',
     default: productsList as IProduct[]
 });
-
-export const brandsListState = atom({
-    key: 'brandsList',
-    default: brandsList as IProduct[]
-})
-
 
 export const categoriesState = selector({
     key: 'categories',
@@ -28,24 +21,6 @@ export const categoriesState = selector({
             return flatCats.concat( productCategories );
         }, []).filter(( category:string, index:number, categories:string[] ) => {
             return categories.indexOf(category) === index;
-        });
-
-    }
-})
-
-export const brandsState = selector({
-    key: 'brands',
-    get: ({ get }) => {
-
-        // Turn This:
-        // [ ['health], ['health','mens-health'], ['sports'], ['tech','sports'] ]
-
-        // Into This:
-        // [ 'health', 'health', 'mens-health', 'sports', 'tech', 'sports' ]
-        return get(brandsListState).map( product => product.brand ).reduce(( flatCats, productCategories ) => {
-            return flatCats.concat( productCategories );
-        }, []).filter(( category:string, index:number, brands:string[] ) => {
-            return brands.indexOf(category) === index;
         });
 
     }
