@@ -1,0 +1,28 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+.ribbon-ctr {
+    overflow: hidden;
+}
+
+.ribbon {
+    position: absolute;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 50px;
+    color: #000;
+    background-color: #ffc107;
+    top: 25px;
+
+    &-left {
+        left: -50px;
+        transform: rotate(-45deg);
+    }
+
+    &-right {
+        right: -50px;
+        left: auto;
+        transform: rotate(45deg);
+    }
+}

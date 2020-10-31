@@ -1,12 +1,22 @@
 .horizontal-product-list {
-    
     .card-deck {
+        
         margin-bottom: 15px;
         margin-top: 15px;
-    }
+        
+        .product-list-product {
+            margin-bottom: 15px;
+        }
 
-    .card-img-top {
-        scale: 90%;
+        .card-deck:last-child {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.dark {
+    .product-list-product {
+        background-color: #333;
     }
 }
 
@@ -17,15 +27,26 @@
         margin-right: 4px;
     }
 
-    .product-list-title {
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: bold;
+    .card-img-top {
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        max-width: 80%;
+        max-height: 80%;
+        &.clearance {
+            padding-top: 24px;
+            max-width: 70%;
+            max-height: 70%;
+        }
     }
+}
 
-    .product-list-desc {
-        text-align: left;
-        font-family: Arial, Helvetica, sans-serif;
-        font-style: italic;
+.tag {
+    &-health {
+        background-color: pink;
+    }
+    &-mens-health {
+        background-color: royalblue;
     }
 }
