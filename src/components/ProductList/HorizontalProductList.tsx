@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useRecoilValue } from 'recoil';
+
+import { productListState } from './product.recoil';
+
 import { CardDeck } from 'react-bootstrap';
 import ProductFilter from './ProductFilter';
 import Product from './Product';
-import productsList from '../../data/products.json';
+
 
 export interface IProduct {
     image?: string;
@@ -14,6 +18,12 @@ export interface IProduct {
     description: string;
 }
 
+export interface ISearchFilter {
+    name?: string;
+    brand?: string;
+    category?: string;
+}
+
 export default function HorizontalProductList( props:{ 
     filter?:boolean,
     showPagination?:boolean,
@@ -21,11 +31,21 @@ export default function HorizontalProductList( props:{
     title?:string
 }){
 
+    const productsList = useRecoilValue<IProduct[]>(productListState);
     const [ productRows, setProductRows ] = useState<Array<IProduct[]>>([]);
+    const [ searchFilter, setSearchFilter ] = useState<ISearchFilter>({});
 
     useEffect(() => {
 
-        const innerProductList = [ ...productsList ];
+        const innerProductList = [ ...productsList ].filter(( product ) => {
+
+            if(searchFilter?.name){
+                return product.name.includes( searchFilter.name );
+            }
+
+            return true;
+
+        });
         const rows = [];
 
         while( innerProductList.length && rows.length < (props.rows||1) ){
@@ -34,13 +54,13 @@ export default function HorizontalProductList( props:{
 
         setProductRows( rows );
 
-    }, [ props.rows ]);
+    }, [ props.rows, searchFilter ]);
 
     return <div className="horizontal-product-list">
         
         { props.title && <h1>{props.title}</h1>}
         
-        { props.filter && <ProductFilter /> }
+        { props.filter && <ProductFilter searchDispatch={setSearchFilter} /> }
 
         { productRows.map( row => {
             return <CardDeck>

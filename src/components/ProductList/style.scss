@@ -1,3 +1,26 @@
+.horizontal-product-list {
+    .card-deck {
+        
+        margin-bottom: 15px;
+        margin-top: 15px;
+        
+        .product-list-product {
+            margin-bottom: 15px;
+        }
+
+        .card-deck:last-child {
+            margin-bottom: 0px;
+        }
+
+    }
+}
+
+.dark {
+    .product-list-product {
+        background-color: #333;
+    }
+}
+
 .product-list-product {
 
     .badge {
@@ -7,6 +30,7 @@
 
 }
 
+<<<<<<< HEAD
 .test {
     background-color: rgba(190, 199, 198, 0.3);
 }
@@ -26,3 +50,13 @@
         border: 1px black;
     }
 }
+=======
+.tag {
+    &-health {
+        background-color: pink;
+    }
+    &-mens-health {
+        background-color: royalblue;
+    }
+}
+>>>>>>> 104e828d12256e443cbb0ed1729087006fb79f7a
