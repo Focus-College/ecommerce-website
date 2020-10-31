@@ -25,3 +25,19 @@ export const categoriesState = selector({
 
     }
 })
+
+export const brandsState = selector({
+    key: 'brands',
+    get: ({ get }) => {
+
+        // Turn This:
+        // [ ['health], ['health','mens-health'], ['sports'], ['tech','sports'] ]
+
+        // Into This:
+        // [ 'health', 'health', 'mens-health', 'sports', 'tech', 'sports' ]
+        return get(productListState).map( product => product.brand ).filter(( brand:string, index:number, brands:string[] ) => {
+            return brands.indexOf(brand) === index;
+        });
+
+    }
+})
