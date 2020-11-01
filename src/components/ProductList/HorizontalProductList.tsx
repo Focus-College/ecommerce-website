@@ -22,13 +22,15 @@ export interface ISearchFilter {
     name?: string;
     brand?: string;
     category?: string;
+    salePrice?: string;
+    clearancePrice?: string;
 }
 
 export default function HorizontalProductList( props:{ 
     filter?:boolean,
     showPagination?:boolean,
     rows?:number,
-    title?:string
+    title?:string,
 }){
 
     const productsList = useRecoilValue<IProduct[]>(productListState);
@@ -53,6 +55,15 @@ export default function HorizontalProductList( props:{
                 found = found && product.categories.includes(searchFilter.category);
             }
 
+            if(searchFilter?.clearancePrice)
+            {
+                found = found && product.price.substr(-2,2) == "45";
+            }
+
+            if(searchFilter?.salePrice){
+                found = found && product.price.substr(-2,2) == "99";
+            }
+            
             return found;
 
         });
