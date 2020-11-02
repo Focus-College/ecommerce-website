@@ -22,7 +22,6 @@ export interface ISearchFilter {
     name?: string;
     brand?: string;
     category?: string;
-    salePrice?: string;
     clearancePrice?: string;
 }
 
@@ -31,6 +30,8 @@ export default function HorizontalProductList( props:{
     showPagination?:boolean,
     rows?:number,
     title?:string,
+    clearancePrice?:boolean,
+    salePrice?:boolean
 }){
 
     const productsList = useRecoilValue<IProduct[]>(productListState);
@@ -55,13 +56,15 @@ export default function HorizontalProductList( props:{
                 found = found && product.categories.includes(searchFilter.category);
             }
 
-            if(searchFilter?.clearancePrice)
+            //Why is this working?  Shouldn't it be !searchFilter?  Would I want !searchFilter around all of this code instead?
+            if(searchFilter && props.clearancePrice)
             {
-                found = found && product.price.substr(-2,2) == "45";
+                found = found && product.price.substr(-2,2) === "45";
             }
 
-            if(searchFilter?.salePrice){
-                found = found && product.price.substr(-2,2) == "99";
+            if(searchFilter && props.salePrice)
+            {
+                found = found && product.price.substr(-2,2) === "99";
             }
             
             return found;
