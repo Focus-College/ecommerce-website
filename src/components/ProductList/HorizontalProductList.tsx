@@ -22,7 +22,6 @@ export interface ISearchFilter {
     name?: string;
     brand?: string;
     category?: string;
-    clearancePrice?: string;
 }
 
 export default function HorizontalProductList( props:{ 
@@ -43,6 +42,19 @@ export default function HorizontalProductList( props:{
         const innerProductList = [ ...productsList ].filter(( product ) => {
 
             let found = true;
+
+            //Returns all the clearance items for the clearance area.
+            if(props.clearancePrice)
+            {
+                found = found && product.price.substr(-2,2) === "45";
+                return found;
+            }
+
+            //If we're not filtering by name, brand, or category, return all the clearance or sale products.
+            if(!searchFilter?.name && !searchFilter.brand && !searchFilter.category)
+            {
+                     found = found && (product.price.substr(-2,2) === "45" || product.price.substr(-2,2) === "99");
+            }
             
             if(searchFilter?.name){
                 found = product.name.includes( searchFilter.name );
@@ -55,17 +67,8 @@ export default function HorizontalProductList( props:{
             if(searchFilter?.category){
                 found = found && product.categories.includes(searchFilter.category);
             }
-
-            //Why is this working?  Shouldn't it be !searchFilter?  Would I want !searchFilter around all of this code instead?
-            if(searchFilter && props.clearancePrice)
-            {
-                found = found && product.price.substr(-2,2) === "45";
-            }
-
-            if(searchFilter && props.salePrice)
-            {
-                found = found && product.price.substr(-2,2) === "99";
-            }
+            
+           
             
             return found;
 
