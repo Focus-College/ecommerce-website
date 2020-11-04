@@ -11,27 +11,27 @@ import { Col } from 'react-bootstrap';
 export default function CheckoutPage( props:{} ){
 
     return <MainLayout>
-        <Form>
+        <Form className="shippingInfo">
         <Form.Row>
-            <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Group as={Col} controlId="formGridFullName">
+            <Form.Label>Full Name</Form.Label>
+            <Form.Control type="name" placeholder="Please Enter Your Full Name" />
             </Form.Group>
 
-            <Form.Group as={Col} controlId="formGridPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
+            <Form.Group as={Col} controlId="formGridPhone">
+            <Form.Label>Phone Number</Form.Label>
+            <Form.Control type="phoneNumber" placeholder="Phone Number" />
             </Form.Group>
         </Form.Row>
 
         <Form.Group controlId="formGridAddress1">
-            <Form.Label>Address</Form.Label>
-            <Form.Control placeholder="1234 Main St" />
+            <Form.Label>Address Line 1 (or Company Name)</Form.Label>
+            <Form.Control placeholder="Street Address, P.O box, Company Nmae, c/o" />
         </Form.Group>
 
         <Form.Group controlId="formGridAddress2">
-            <Form.Label>Address 2</Form.Label>
-            <Form.Control placeholder="Apartment, studio, or floor" />
+            <Form.Label>Address 2(Optional)</Form.Label>
+            <Form.Control placeholder="Apartment, suite, unit, building, floor, ect" />
         </Form.Group>
 
         <Form.Row>
@@ -41,28 +41,33 @@ export default function CheckoutPage( props:{} ){
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridState">
-            <Form.Label>State</Form.Label>
+            <Form.Label>Province</Form.Label>
             <Form.Control as="select" defaultValue="Choose...">
                 <option>Choose...</option>
-                <option>...</option>
+                <option>BC</option>
+                <option>AB</option>
+                <option>SK</option>
+                <option>MB</option>
+                <option>QC</option>
+                <option>ON</option>
+                <option>NL</option>
+                <option>PE</option>
+                <option>NB</option>
+                <option>NS</option>
+                <option>PE</option>
+                <option>YT</option>
+                <option>NT</option>
+                <option>NU</option>
             </Form.Control>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridZip">
-            <Form.Label>Zip</Form.Label>
+            <Form.Label>Postal Code</Form.Label>
             <Form.Control />
             </Form.Group>
         </Form.Row>
-
-        <Form.Group id="formGridCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-
-        <Button variant="primary" type="submit">
-            Submit
-        </Button>
     </Form>
-        <Switch>
+        {/* <Switch>
             <Route path="/cart/checkout/success" component={CheckoutSuccess}/>
             <Route path="/cart/checkout/failure" component={CheckoutFailure}/>
             <Route path="/cart/checkout">
@@ -72,7 +77,7 @@ export default function CheckoutPage( props:{} ){
                 <Link to="/cart/checkout/failure">Failed</Link>
 
             </Route>
-        </Switch>
+        </Switch> */}
 
 
     </MainLayout>;
