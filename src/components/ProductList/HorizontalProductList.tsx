@@ -50,6 +50,13 @@ export default function HorizontalProductList( props:{
                 return found;
             }
 
+            //Returns all the sale items
+            if(props.salePrice)
+            {
+                found = found && product.price.substr(-2,2) === "99";
+                return found;
+            }
+
             //If we're not filtering by name, brand, or category, return all the clearance or sale products.
             if(!searchFilter?.name && !searchFilter.brand && !searchFilter.category)
             {
