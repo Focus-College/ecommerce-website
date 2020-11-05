@@ -91,7 +91,8 @@ return  <MainLayout>{
           </Form.Row>
         </Form>
 
-        <h1>Checkout Page</h1>
+        <button> Submit information </button>
+
         <Link to="/cart/checkout/success">Success</Link>
         <Link to="/cart/checkout/failure">Failed</Link>
 
