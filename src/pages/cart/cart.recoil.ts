@@ -1,3 +1,4 @@
+import React from 'react';
 import { atom, selector } from 'recoil';
 import { IProduct } from '../../components/ProductList/HorizontalProductList';
 
@@ -12,3 +13,6 @@ export const cartState = atom({
     key: 'cart',
     default: [] as ICart
 });
+
+
+
