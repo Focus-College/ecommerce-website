@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Route, Switch } from 'react-router';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import CheckoutSuccess from './CheckoutSuccessPage';
 import CheckoutFailure from './CheckoutFailedPage';
 import MainLayout from '../../layouts/MainLayout';
-import { Col } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import { Alert, Col} from 'react-bootstrap';
 
 
 function randomRedirect():string{
@@ -34,6 +34,7 @@ export default function CheckoutPage(props: any) {
  const redirect = () => {
    history.push(randomRedirect())
  }
+
 
 
   return <MainLayout>{
