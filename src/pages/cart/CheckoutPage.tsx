@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Route, Switch } from 'react-router';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import CheckoutSuccess from './CheckoutSuccessPage';
 import CheckoutFailure from './CheckoutFailedPage';
 import MainLayout from '../../layouts/MainLayout';
-import { Col } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import { Alert, Col} from 'react-bootstrap';
 
 
 function randomRedirect():string{
 
   let randomNumber = Math.floor(Math.random() * 10 );
   let route ='/cart/checkout/failure';
-    //if randomeNumber is greater than 5 it will redirect to success
+    //if randomNumber is greater than 5 it will redirect to success
     //otherwise it will redirect to failure
     if(randomNumber>=5){
       let route = "/cart/checkout/success"
@@ -34,6 +34,7 @@ export default function CheckoutPage(props: any) {
  const redirect = () => {
    history.push(randomRedirect())
  }
+
 
 
   return <MainLayout>{
@@ -59,7 +60,7 @@ export default function CheckoutPage(props: any) {
 
             <Form.Group controlId="formGridAddress1">
               <Form.Label>Address Line 1 (or Company Name)</Form.Label>
-              <Form.Control placeholder="Street Address, P.O box, Company Nmae, c/o" />
+              <Form.Control placeholder="Street Address, P.O box, Company Name, c/o" />
             </Form.Group>
 
             <Form.Group controlId="formGridAddress2">

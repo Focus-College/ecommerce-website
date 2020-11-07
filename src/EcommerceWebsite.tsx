@@ -5,6 +5,7 @@ import ShoppingCart from './pages/cart/ShoppingCartPage';
 import Wishlist from './pages/WishlistPage';
 import Help from './pages/HelpPage';
 import Checkout from './pages/cart/CheckoutPage';
+import ProductPage from './pages/ProductPage';
 import './App.scss';
 import { useShoppingCart } from './pages/cart/useShoppingCart';
 
@@ -29,6 +30,7 @@ export default function EcommerceWebsite( props:{} ){
                 <Switch>
                     <Route path="/wishlist" component={Wishlist} />
                     <Route path="/help" component={Help} />
+                    <Route path="/product" component={ProductPage} />
                     <Route path="/cart/checkout" component={Checkout} />
                     <Route path="/cart" component={ShoppingCart} />
                     <Route path="/" component={HomePage} />
