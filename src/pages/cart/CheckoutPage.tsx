@@ -32,61 +32,64 @@ export default function CheckoutPage(props: any) {
       <Route path="/cart/checkout/failure" component={CheckoutFailure} />
       <Route path="/cart/checkout">
 
-        <Form className="shippingInfo">
-          <Form.Row>
-            <Form.Group as={Col} controlId="formGridFullName">
-              <Form.Label>Full Name</Form.Label>
-              <Form.Control type="name" placeholder="Please Enter Your Full Name" />
+        <Form>
+          <div className="shippingInfo">
+            <Form.Row>
+              <Form.Group as={Col} controlId="formGridFullName">
+                <Form.Label>Full Name</Form.Label>
+                <Form.Control type="name" placeholder="Please Enter Your Full Name" />
+              </Form.Group>
+
+              <Form.Group as={Col} controlId="formGridPhone">
+                <Form.Label>Phone Number</Form.Label>
+                <Form.Control type="number" placeholder="Phone Number" />
+              </Form.Group>
+            </Form.Row>
+
+            <Form.Group controlId="formGridAddress1">
+              <Form.Label>Address Line 1 (or Company Name)</Form.Label>
+              <Form.Control placeholder="Street Address, P.O box, Company Nmae, c/o" />
             </Form.Group>
 
-            <Form.Group as={Col} controlId="formGridPhone">
-              <Form.Label>Phone Number</Form.Label>
-              <Form.Control type="number" placeholder="Phone Number" />
-            </Form.Group>
-          </Form.Row>
-
-          <Form.Group controlId="formGridAddress1">
-            <Form.Label>Address Line 1 (or Company Name)</Form.Label>
-            <Form.Control placeholder="Street Address, P.O box, Company Nmae, c/o" />
-          </Form.Group>
-
-          <Form.Group controlId="formGridAddress2">
-            <Form.Label>Address 2(Optional)</Form.Label>
-            <Form.Control placeholder="Apartment, suite, unit, building, floor, ect" />
-          </Form.Group>
-
-          <Form.Row>
-            <Form.Group as={Col} controlId="formGridCity">
-              <Form.Label>City</Form.Label>
-              <Form.Control />
+            <Form.Group controlId="formGridAddress2">
+              <Form.Label>Address 2(Optional)</Form.Label>
+              <Form.Control placeholder="Apartment, suite, unit, building, floor, ect" />
             </Form.Group>
 
-            <Form.Group as={Col} controlId="formGridState">
-              <Form.Label>Province</Form.Label>
-              <Form.Control as="select" defaultValue="Choose...">
-                <option>Choose...</option>
-                <option>BC</option>
-                <option>AB</option>
-                <option>SK</option>
-                <option>MB</option>
-                <option>QC</option>
-                <option>ON</option>
-                <option>NL</option>
-                <option>PE</option>
-                <option>NB</option>
-                <option>NS</option>
-                <option>PE</option>
-                <option>YT</option>
-                <option>NT</option>
-                <option>NU</option>
-              </Form.Control>
-            </Form.Group>
+            <Form.Row>
+              <Form.Group as={Col} controlId="formGridCity">
+                <Form.Label>City</Form.Label>
+                <Form.Control />
+              </Form.Group>
 
-            <Form.Group as={Col} controlId="formGridZip">
-              <Form.Label>Postal Code</Form.Label>
-              <Form.Control />
-            </Form.Group>
-          </Form.Row>
+              <Form.Group as={Col} controlId="formGridState">
+                <Form.Label>Province</Form.Label>
+                <Form.Control as="select" defaultValue="Choose...">
+                  <option>Choose...</option>
+                  <option>BC</option>
+                  <option>AB</option>
+                  <option>SK</option>
+                  <option>MB</option>
+                  <option>QC</option>
+                  <option>ON</option>
+                  <option>NL</option>
+                  <option>PE</option>
+                  <option>NB</option>
+                  <option>NS</option>
+                  <option>PE</option>
+                  <option>YT</option>
+                  <option>NT</option>
+                  <option>NU</option>
+                </Form.Control>
+              </Form.Group>
+
+              <Form.Group as={Col} controlId="formGridZip">
+                <Form.Label>Postal Code</Form.Label>
+                <Form.Control />
+              </Form.Group>
+            </Form.Row>
+          </div>
+          
         </Form>
 
 
@@ -131,11 +134,12 @@ export default function CheckoutPage(props: any) {
                  />
             </Col>
           </Form.Row>
+          <Button type = "submit" variant="warning" block >Checkout</Button>
         </Form>
         
 
        
-          <Button type = "submit" variant="warning" block >Checkout</Button>
+         
                       
       </Route>
 
