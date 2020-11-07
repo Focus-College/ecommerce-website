@@ -2,7 +2,7 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { Col, Form, Row } from 'react-bootstrap';
 import { ISearchFilter } from './HorizontalProductList';
-import { categoriesState, brandsState } from './product.recoil';
+import { categoriesState, brandsState, pricesState } from './product.recoil';
 
 export default function ProductFilter( props:{
     searchDispatch: ( searchFilter:ISearchFilter ) => void
@@ -35,7 +35,7 @@ export default function ProductFilter( props:{
         props.searchDispatch({
             name: searchTerm,
             brand: searchBrand,
-            category: searchCategory
+            category: searchCategory,
         });
     }, [ searchTerm, searchCategory, searchBrand ]);
 

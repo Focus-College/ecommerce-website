@@ -9,7 +9,7 @@ export default function HomePage( props:{} ){
         
         <FeatureSlider />
 
-        <HorizontalProductList title="Clearance Products" />
+        <HorizontalProductList title="Clearance Products" clearancePrice />
 
         <HorizontalProductList filter rows={2} />
 
