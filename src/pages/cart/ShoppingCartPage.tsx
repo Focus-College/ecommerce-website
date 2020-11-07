@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import { Button, Image, Table } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Link } from 'react-router-dom'
 import { useRecoilState } from 'recoil';
 import { getValueFromDenormalizedStringPath } from '../../helpers/getValueFromDenormalizedStringPath';
 import MainLayout from '../../layouts/MainLayout';
@@ -9,9 +8,27 @@ import { cartState } from './cart.recoil';
 import './style.scss';
 import Images from '../../images';
 
-export default function Homepage( props:{} ){
-    
+export default function Homepage(props:{} ) {
+
     const [ cart, setCart ] = useRecoilState(cartState);
+    const [currentValue, setCurrentValue ] = useState(1);
+    const [incrementValue, setIncrementValue ] = useState(1);
+
+    // function onClickAdd (){
+    //     setCurrentValue( currentValue + 1)
+    // }
+
+    // function onClickSubtract(){
+    //     setCurrentValue( currentValue - 1)
+    // }
+
+    function onChangeInIncrementBy (event:ChangeEvent<HTMLInputElement>){
+        setIncrementValue( Number (event.target.value));
+    }
+
+    function removeItem() {
+
+    }
 
     return <MainLayout>
         <h1>Shopping Cart Page</h1>
@@ -37,13 +54,15 @@ export default function Homepage( props:{} ){
                             {item.product.description}
                         </td>
                         <td className="money">$ {item.product.price}</td>
-                        <td className="qty">{item.qty}</td>
+                        <td className="qty">
+                            <input type="number" value={incrementValue} onChange={onChangeInIncrementBy}/><br/>
+                        </td>
                         <td className="money">$ 4.99</td>
                     </tr>
                 ))}
             </tbody>
             <tbody>
-                <tr>
+                <tr>5
                     <td colSpan={2} rowSpan={5}></td>
                     <td colSpan={2}>Subtotal</td>
                     <td className="money">$9.98</td>

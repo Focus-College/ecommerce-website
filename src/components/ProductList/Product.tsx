@@ -26,7 +26,7 @@ export default function Product( props:IProduct ){
         <Card className="product-list-product ribbon-ctr">
             { showClearance && <Ribbon msg="Clearance" placement="right" /> }
             { props.image && <Card.Img variant="top" src={getValueFromDenormalizedStringPath(Images, props.image)} /> }
-            <Card.Body>
+            <Card.Body className="test">
                 <Card.Title>{props.name}</Card.Title>
                 <Card.Text className="product-description">
                     {props.description}
