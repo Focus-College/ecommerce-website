@@ -17,6 +17,9 @@ import { ChangeEvent } from 'react';
 import CheckoutFailedPage from './CheckoutFailedPage';
 import { isNumber } from 'lodash';
 import { Icart } from './cart.recoil';
+import { useHistory } from 'react-router-dom';
+
+
 
 
 
@@ -24,12 +27,20 @@ import { Icart } from './cart.recoil';
 
 export default function CheckoutPage(props: any) {
 
-  
+
+// history is for checkout redirect
+ let history = useHistory();
+
+ const redirect = () => {
+   history.push('/cart/checkout/failure')
+ }
+
 
   return <MainLayout>{
 
     <Switch>
       <Route path="/cart/checkout/failure" component={CheckoutFailure} />
+      <Route path="/cart/checkout/success" component={CheckoutSuccess}/>
       <Route path="/cart/checkout">
 
         <Form>
@@ -62,7 +73,7 @@ export default function CheckoutPage(props: any) {
                 <Form.Control />
               </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridState">
+              <Form.Group as={Col} controlId="formGridProvince">
                 <Form.Label>Province</Form.Label>
                 <Form.Control as="select" defaultValue="Choose...">
                   <option>Choose...</option>
@@ -83,7 +94,7 @@ export default function CheckoutPage(props: any) {
                 </Form.Control>
               </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridZip">
+              <Form.Group as={Col} controlId="formGridPostal">
                 <Form.Label>Postal Code</Form.Label>
                 <Form.Control />
               </Form.Group>
@@ -107,7 +118,6 @@ export default function CheckoutPage(props: any) {
 
             <Col className= "field">
               <Form.Control 
-              type = "number"
               maxLength = {16}
 
               placeholder="cardNumber" />
@@ -122,25 +132,17 @@ export default function CheckoutPage(props: any) {
                 maxLength= {4}
                 placeholder="M/Y "
  />
-
-
-
             </Col>
             <Col className= "field">
               <Form.Control
-                type="number"
                 maxLength={3}
                 placeholder="CVC "
                  />
             </Col>
           </Form.Row>
-          <Button type = "submit" variant="warning" block >Checkout</Button>
+          <Button onClick={redirect} type = "submit" variant="warning" block >Checkout</Button>
         </Form>
-        
-
-       
-         
-                      
+               
       </Route>
 
 
