@@ -1,4 +1,4 @@
-import React, { Component, PropsWithChildren } from 'react';
+import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -12,24 +12,23 @@ import { LinkContainer } from 'react-router-bootstrap';
 import CheckoutSuccessPage from './CheckoutSuccessPage';
 import { render } from 'react-dom';
 import { text } from '@fortawesome/fontawesome-svg-core';
+import { ReactComponent } from '*.svg';
+import { ChangeEvent } from 'react';
+import CheckoutFailedPage from './CheckoutFailedPage';
+import { isNumber } from 'lodash';
+import { Icart } from './cart.recoil';
 
 
 
 
 
+export default function CheckoutPage(props: any) {
 
-
-export default function CheckoutPage(  props: any) {
-
-  const [state, setState] = React.useState({
-    CardNumber: "2424 2424 2424 2424 2424",
-    
-  })
+  
 
   return <MainLayout>{
 
     <Switch>
-      <Route path="/cart/checkout/success" component={CheckoutSuccess} />
       <Route path="/cart/checkout/failure" component={CheckoutFailure} />
       <Route path="/cart/checkout">
 
@@ -101,21 +100,25 @@ export default function CheckoutPage(  props: any) {
               <Form.Control placeholder="Name" />
             </Col>
           </Form.Row>
-          <Form.Row >
-             <Col className= "field">
-              <Form.Control type="number"
-              maxLength= {16}
-              placeholder="CardNumber" />
+          <Form.Row>
+
+            <Col className= "field">
+              <Form.Control 
+              type = "number"
+              maxLength = {16}
+
+              placeholder="cardNumber" />
             </Col>
+
           </Form.Row>
           <Form.Row >
 
 
             <Col className= "field">
               <Form.Control
-                type="date"
-                maxLength={4}
-                placeholder="M/Y " />
+                maxLength= {4}
+                placeholder="M/Y "
+ />
 
 
 
@@ -124,14 +127,15 @@ export default function CheckoutPage(  props: any) {
               <Form.Control
                 type="number"
                 maxLength={3}
-                placeholder="CVC " />
+                placeholder="CVC "
+                 />
             </Col>
           </Form.Row>
         </Form>
         
 
        
-          <Button variant="warning" block >Checkout</Button>
+          <Button type = "submit" variant="warning" block >Checkout</Button>
                       
       </Route>
 

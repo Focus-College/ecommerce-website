@@ -15,4 +15,11 @@ export const cartState = atom({
 });
 
 
+export  interface Icart {
+    name: string
+    cardnumber : number;
+    cvc: number;
+    ex_date: Date;
+
+}
 
