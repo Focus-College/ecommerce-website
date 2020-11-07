@@ -20,19 +20,30 @@ import { Icart } from './cart.recoil';
 import { useHistory } from 'react-router-dom';
 
 
+function randomRedirect():string{
 
+  let randomNumber = Math.floor(Math.random() * 10 );
+  let route ='/cart/checkout/failure';
+    //if randomeNumber is greater than 5 it will redirect to success
+    //otherwise it will redirect to failure
+    if(randomNumber>=5){
+      let route = "/cart/checkout/success"
+      return route;
+    } else{
+      return route;
+    }
+}
 
 
 
 
 export default function CheckoutPage(props: any) {
 
-
 // history is for checkout redirect
  let history = useHistory();
 
  const redirect = () => {
-   history.push('/cart/checkout/failure')
+   history.push(randomRedirect())
  }
 
 
