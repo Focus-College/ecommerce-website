@@ -104,9 +104,7 @@ export default function CheckoutPage(props: any) {
 
             <Col className= "field">
               <Form.Control 
-              type = "number"
               maxLength = {16}
-
               placeholder="cardNumber" />
             </Col>
 
@@ -125,7 +123,6 @@ export default function CheckoutPage(props: any) {
             </Col>
             <Col className= "field">
               <Form.Control
-                type="number"
                 maxLength={3}
                 placeholder="CVC "
                  />
