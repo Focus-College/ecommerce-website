@@ -4,19 +4,8 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import CheckoutSuccess from './CheckoutSuccessPage';
 import CheckoutFailure from './CheckoutFailedPage';
-import { Link } from 'react-router-dom';
 import MainLayout from '../../layouts/MainLayout';
-import StripeCheckout, { StripeCheckoutProps } from 'react-stripe-checkout';
 import { Col } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
-import CheckoutSuccessPage from './CheckoutSuccessPage';
-import { render } from 'react-dom';
-import { text } from '@fortawesome/fontawesome-svg-core';
-import { ReactComponent } from '*.svg';
-import { ChangeEvent } from 'react';
-import CheckoutFailedPage from './CheckoutFailedPage';
-import { isNumber } from 'lodash';
-import { Icart } from './cart.recoil';
 import { useHistory } from 'react-router-dom';
 
 
@@ -122,7 +111,9 @@ export default function CheckoutPage(props: any) {
           <Form.Row>
 
             <Col className= "field">
-              <Form.Control placeholder="Name" />
+              <Form.Control
+              type = "text"
+              placeholder="Name" />
             </Col>
           </Form.Row>
           <Form.Row>
@@ -139,7 +130,7 @@ export default function CheckoutPage(props: any) {
 
             <Col className= "field">
               <Form.Control
-                maxLength= {4}
+                maxLength= {5}
                 placeholder="M/Y "
  />
             </Col>
