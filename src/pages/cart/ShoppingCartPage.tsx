@@ -7,28 +7,34 @@ import MainLayout from '../../layouts/MainLayout';
 import { cartState } from './cart.recoil';
 import './style.scss';
 import Images from '../../images';
-
 export default function Homepage(props:{} ) {
+
 
     const [ cart, setCart ] = useRecoilState(cartState);
     const [currentValue, setCurrentValue ] = useState(1);
-    const [incrementValue, setIncrementValue ] = useState(1);
 
-    // function onClickAdd (){
-    //     setCurrentValue( currentValue + 1)
-    // }
+    const index = cart.map(item => item.qty);
 
-    // function onClickSubtract(){
-    //     setCurrentValue( currentValue - 1)
-    // }
-
-    function onChangeInIncrementBy (event:ChangeEvent<HTMLInputElement>){
-        setIncrementValue( Number (event.target.value));
+    function valueOneSet(event:ChangeEvent<HTMLInputElement>){
+        setCurrentValue( Number(event.target.value));
     }
 
-    function removeItem() {
-
+    function onClickAdd (){
+        setCurrentValue( currentValue + 1)
     }
+
+    function onClickSubtract(){
+        setCurrentValue( currentValue - 1)
+
+        if (currentValue < 1)
+        return 1;
+    }
+
+    function removefromCart(product:any) {
+        const newList = cart.filter((item) => item.product !== product);
+        setCart(newList);
+    }
+
 
     return <MainLayout>
         <h1>Shopping Cart Page</h1>
@@ -40,6 +46,7 @@ export default function Homepage(props:{} ) {
                     <th>Product</th>
                     <th className="money">Price</th>
                     <th className="qty">Qty</th>
+                    
                     <th className="money">Total</th>
                 </tr>
             </thead>
@@ -55,14 +62,21 @@ export default function Homepage(props:{} ) {
                         </td>
                         <td className="money">$ {item.product.price}</td>
                         <td className="qty">
-                            <input type="number" value={incrementValue} onChange={onChangeInIncrementBy}/><br/>
+                            <button className="btnAddQty" onClick = {onClickAdd}> + </button> 
+                            {currentValue}
+                            <button className="btnSubQty" onClick = {onClickSubtract}> - </button> 
+
+                            <div>
+                            <button className="btnRemoveItem" type="button" onClick={() => removefromCart(item.product)}>Remove</button>
+                            </div>
                         </td>
+                        
                         <td className="money">$ 4.99</td>
                     </tr>
                 ))}
             </tbody>
             <tbody>
-                <tr>5
+                <tr>
                     <td colSpan={2} rowSpan={5}></td>
                     <td colSpan={2}>Subtotal</td>
                     <td className="money">$9.98</td>
