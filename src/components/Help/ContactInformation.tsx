@@ -1,11 +1,16 @@
 import { styled } from '@material-ui/core';
-import React from 'react';
+import React, { useState } from 'react';
 import {  Col, Button, Form, Container, Row, Card } from 'react-bootstrap';
 
 import './style.scss';
 
-
-
+interface IMessage {
+    firstName   : string,
+    lastName    : string,
+    telephone   : number,
+    eEmail      : string,
+    msgTextArea : string
+}
 
 
 export default function ContactInformation (prps:{}){
@@ -19,7 +24,7 @@ export default function ContactInformation (prps:{}){
              <Row>
                 <Col xs lg="2" ></Col>
                 <Col>                
-                <Form>
+                <Form >
                     <Form.Row>
                         <p> 
                             Please fill out the form below to contact us with a comment or question.
