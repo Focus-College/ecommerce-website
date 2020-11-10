@@ -16,7 +16,7 @@ import CheckoutFailedPage from './CheckoutFailedPage';
 import { isNumber } from 'lodash';
 import { Icart } from './cart.recoil';
 import { useHistory } from 'react-router-dom';
-import { Alert, Col} from 'react-bootstrap';
+import { Col} from 'react-bootstrap';
 
 
 function randomRedirect():string{
