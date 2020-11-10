@@ -5,6 +5,16 @@ import Button from 'react-bootstrap/Button'
 import CheckoutSuccess from './CheckoutSuccessPage';
 import CheckoutFailure from './CheckoutFailedPage';
 import MainLayout from '../../layouts/MainLayout';
+//import StripeCheckout, { StripeCheckoutProps } from 'react-stripe-checkout';
+import { LinkContainer } from 'react-router-bootstrap';
+import CheckoutSuccessPage from './CheckoutSuccessPage';
+import { render } from 'react-dom';
+import { text } from '@fortawesome/fontawesome-svg-core';
+import { ReactComponent } from '*.svg';
+import { ChangeEvent } from 'react';
+import CheckoutFailedPage from './CheckoutFailedPage';
+import { isNumber } from 'lodash';
+import { Icart } from './cart.recoil';
 import { useHistory } from 'react-router-dom';
 import { Alert, Col} from 'react-bootstrap';
 
