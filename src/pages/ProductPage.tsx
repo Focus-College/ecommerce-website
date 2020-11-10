@@ -5,6 +5,8 @@ import { IProduct } from '../components/ProductList/HorizontalProductList';
 import HorizontalProductList from '../components/ProductList/HorizontalProductList';
 import Images from '../images';
 import { getValueFromDenormalizedStringPath } from '../helpers/getValueFromDenormalizedStringPath';
+import { Col, Container, Row, Tab, Tabs } from 'react-bootstrap';
+import Reviews_QandA_Tab from '../components/Reviews_QandA/Reviews_QandA_Tab';
 
 export default function ProductPage( props:IProduct ){
 
@@ -19,11 +21,8 @@ export default function ProductPage( props:IProduct ){
 
             </div>
         </section>
-        <section>
 
-            {/* Reviews / Question & Answers */}
-
-        </section>
+    <Reviews_QandA_Tab></Reviews_QandA_Tab>
 
         <section>
         <h2>Suggested Products</h2>
