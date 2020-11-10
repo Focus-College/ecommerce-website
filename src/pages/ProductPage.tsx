@@ -29,6 +29,5 @@ export default function ProductPage( props:IProduct ){
         <HorizontalProductList rows={1} />
 
         </section>
-    </MainLayout>;
-
+    </MainLayout>
 }
