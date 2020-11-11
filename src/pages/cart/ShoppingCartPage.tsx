@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { MouseEvent } from 'react'
 import { cartState, ICartEntry } from '../../pages/cart/cart.recoil';
 import { Button, Image, Table } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -8,19 +8,32 @@ import MainLayout from '../../layouts/MainLayout';
 import './style.scss';
 import Images from '../../images';
 export default function Homepage(props:{} ) {
-
-
+    
     const [ cart, setCart ] = useRecoilState(cartState);
-    const [currentValue, setCurrentValue ] = useState(1);
 
-   
-    function onClickAdd (){
-        setCurrentValue( currentValue + 1)
+    function onClickAdd(index:number) {
+        return function updateItemInCart(event:MouseEvent<HTMLButtonElement>)
+        {
+            const cartItem = {...cart[index]};
+            let fullCart = [...cart]
+            cartItem.qty++;
+            fullCart[index] = cartItem;
+            setCart(fullCart);
+        }
     }
 
-    function onClickSubtract(){
-        if (currentValue > 1 ) setCurrentValue( currentValue - 1);
-        
+    function onClickSubtract(index:number) {
+        return function RemoveItemFromCart(event:MouseEvent<HTMLButtonElement>)
+        {
+            const cartItem = {...cart[index]};
+            let fullCart = [...cart]
+            if(cartItem.qty > 1)
+            {
+                 cartItem.qty--;
+            }
+            fullCart[index] = cartItem;
+            setCart(fullCart);
+        }
     }
 
     const setCartState = ( data:ICartEntry[] ) => {
@@ -49,7 +62,7 @@ export default function Homepage(props:{} ) {
                 </tr>
             </thead>
             <tbody>
-                { cart.map( item => (
+                { cart.map((item, index) => (
                     <tr>
                         <td>
                             { item.product.image && <Image src={getValueFromDenormalizedStringPath(Images, item.product.image)} /> }
@@ -60,9 +73,9 @@ export default function Homepage(props:{} ) {
                         </td>
                         <td className="money">$ {item.product.price}</td>
                         <td className="qty">
-                            <button className="btnAddQty" onClick = {onClickAdd}> + </button> 
-                            { currentValue}
-                            <button className="btnSubQty" onClick = {onClickSubtract}> - </button> 
+                            <button className="btnAddQty" onClick={onClickAdd(index)}> + </button> 
+                            {item.qty}
+                            <button className="btnSubQty" onClick = {onClickSubtract(index)}> - </button> 
 
                             <div>
                             <button className="btnRemoveItem" type="button" onClick={() => removeFromCart(item.product)}>Remove</button>
