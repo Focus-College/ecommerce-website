@@ -1,10 +1,10 @@
-import React, { ChangeEvent, useState } from 'react'
+import React, { useState } from 'react'
+import { cartState, ICartEntry } from '../../pages/cart/cart.recoil';
 import { Button, Image, Table } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useRecoilState } from 'recoil';
 import { getValueFromDenormalizedStringPath } from '../../helpers/getValueFromDenormalizedStringPath';
 import MainLayout from '../../layouts/MainLayout';
-import { cartState } from './cart.recoil';
 import './style.scss';
 import Images from '../../images';
 export default function Homepage(props:{} ) {
@@ -13,26 +13,24 @@ export default function Homepage(props:{} ) {
     const [ cart, setCart ] = useRecoilState(cartState);
     const [currentValue, setCurrentValue ] = useState(1);
 
-    const index = cart.map(item => item.qty);
-
-    function valueOneSet(event:ChangeEvent<HTMLInputElement>){
-        setCurrentValue( Number(event.target.value));
-    }
-
+   
     function onClickAdd (){
         setCurrentValue( currentValue + 1)
     }
 
     function onClickSubtract(){
-        setCurrentValue( currentValue - 1)
-
-        if (currentValue < 1)
-        return 1;
+        if (currentValue > 1 ) setCurrentValue( currentValue - 1);
+        
     }
 
-    function removefromCart(product:any) {
+    const setCartState = ( data:ICartEntry[] ) => {
+        window.localStorage.setItem('storedCartState', JSON.stringify(data));
+        setCart( data );
+    }
+
+    function removeFromCart(product:any) {
         const newList = cart.filter((item) => item.product !== product);
-        setCart(newList);
+        setCartState( newList );
     }
 
 
@@ -63,11 +61,11 @@ export default function Homepage(props:{} ) {
                         <td className="money">$ {item.product.price}</td>
                         <td className="qty">
                             <button className="btnAddQty" onClick = {onClickAdd}> + </button> 
-                            {currentValue}
+                            { currentValue}
                             <button className="btnSubQty" onClick = {onClickSubtract}> - </button> 
 
                             <div>
-                            <button className="btnRemoveItem" type="button" onClick={() => removefromCart(item.product)}>Remove</button>
+                            <button className="btnRemoveItem" type="button" onClick={() => removeFromCart(item.product)}>Remove</button>
                             </div>
                         </td>
                         
