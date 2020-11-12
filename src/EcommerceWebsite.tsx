@@ -21,11 +21,13 @@ export default function EcommerceWebsite( props:{} ){
 
     }, [])
     
+    //possibly need wish integration in a similar style. 
+
 
     return (
         <div className={`ecommerce ${isDarkMode && "dark"}`}>
             
-            <BrowserRouter>
+            <BrowserRouter> 
                 <Switch>
                     <Route path="/wishlist" component={Wishlist} />
                     <Route path="/help" component={Help} />

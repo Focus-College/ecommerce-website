@@ -9,6 +9,10 @@ import { cartState } from './cart.recoil';
 import './style.scss';
 import Images from '../../images';
 
+//nightmare comment : so to do a wish list , we need to ref wish recoil
+//structure it similarly to the rest of it?
+//Start from copy and onward O_o
+
 export default function Homepage( props:{} ){
     
     const [ cart, setCart ] = useRecoilState(cartState);
