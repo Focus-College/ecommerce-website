@@ -54,7 +54,7 @@ export function useWishList(){
     const [ wish, setWishState ] = useRecoilState(wishState);
     
     const setList = ( data:WlistEntry[] ) => {
-        window.localStorage.setItem('storedWishLState', JSON.stringify(data));
+        window.localStorage.setItem('storedWishState', JSON.stringify(data));
         setWishState( data );
     }
 

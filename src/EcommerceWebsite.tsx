@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ShoppingCart from './pages/cart/ShoppingCartPage';
-import Wishlist from './pages/WishlistPage';
 import Help from './pages/HelpPage';
 import Checkout from './pages/cart/CheckoutPage';
 import './App.scss';
 import { useShoppingCart } from './pages/cart/useShoppingCart';
+
+import { useWishList } from './pages/cart/useShoppingCart';
+import WishPage from './pages/cart/wishlist.test';
+
 
 export default function EcommerceWebsite( props:{} ){
 
@@ -14,14 +17,22 @@ export default function EcommerceWebsite( props:{} ){
 
     const { setCartState } = useShoppingCart();
 
+    const { setWishState } = useWishList(); 
+
     useEffect(() => {
 
         const cartContents = window.localStorage.getItem('storedCartState');
         cartContents && setCartState( JSON.parse( cartContents ));
 
     }, [])
-    
-    //possibly need wish integration in a similar style. 
+
+    useEffect(() => {
+
+        const wishContents = window.localStorage.getItem('storedWishState');
+        wishContents && setWishState( JSON.parse( wishContents ));
+
+    }, [])
+
 
 
     return (
@@ -29,7 +40,7 @@ export default function EcommerceWebsite( props:{} ){
             
             <BrowserRouter> 
                 <Switch>
-                    <Route path="/wishlist" component={Wishlist} />
+                    <Route path="/wishlist" component={WishPage} />
                     <Route path="/help" component={Help} />
                     <Route path="/cart/checkout" component={Checkout} />
                     <Route path="/cart" component={ShoppingCart} />
