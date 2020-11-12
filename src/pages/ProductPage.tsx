@@ -11,7 +11,7 @@ import Reviews_QandA_Tab from '../components/Reviews_QandA/Reviews_QandA_Tab';
 export default function ProductPage( props:IProduct ){
 
     return <MainLayout>
-        <section id="single-product-informtaion">
+        <section id="single-product-info">
             {/* This div will be for the Image/Rating/Price */}
             <div>  
             </div>
@@ -29,6 +29,5 @@ export default function ProductPage( props:IProduct ){
         <HorizontalProductList rows={1} />
 
         </section>
-    </MainLayout>;
-
+    </MainLayout>
 }
