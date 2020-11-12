@@ -33,6 +33,10 @@ export default function Product( props:IProduct ){
                 </Card.Text>
                 {isInCart(props) || <Button block onClick={clickAddToCartHandler}>Add to Cart</Button>}
                 {isInCart(props) && <Button block disabled variant="success">Added to Cart!</Button>}
+
+                {isInCart(props) || <Button block onClick={clickAddToCartHandler}>Add to Cart</Button>}
+                {isInCart(props) && <Button block disabled variant="info">add to wishlist.</Button>}
+           
             </Card.Body>
             <Card.Footer>
                 <div>
