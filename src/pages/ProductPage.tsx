@@ -14,7 +14,7 @@ export default function ProductPage( props:IProduct ){
         <section id="single-product-info">
                 <img src={Images.nivea.products.aloeHydro} alt="Nivea Products"/>
                 <div className="ul-about">
-                    <h1>Aloe-Hydro</h1>
+                    <h1 className="product-title">Aloe-Hydro</h1>
                     <hr/>
                 <ul>
                     <li>
@@ -38,8 +38,12 @@ export default function ProductPage( props:IProduct ){
                 </ul>
                 </div>
             <div className="product-info">
+               <div>
+
+              
                 <h2>$6.99</h2>
                 <Rating name="half-rating" defaultValue={2.5} precision={1} /> 
+                </div>
                 <hr/>
                 <p>NIVEA Soft All-Purpose Moisturizing Cream - provides light, 
                     intensive and refreshing hydration It can feel like an endless quest 

@@ -12,8 +12,8 @@ import { isTemplateExpression } from 'typescript';
 export default function CheckoutSuccessPage( props:{} ){
     const [ cart, setCart ] = useRecoilState(cartState);   
         return <>
-
-        <Table>
+<h1 className="Success-title">Checkout Success, Thank You</h1>
+        <Table className="success-table">
            <h1>Payment Information</h1> 
            <tbody> 
                <tr>
