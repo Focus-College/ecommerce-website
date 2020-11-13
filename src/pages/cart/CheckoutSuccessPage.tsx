@@ -13,9 +13,7 @@ import Images from '../../images';
 export default function CheckoutSuccessPage( props:{} ){
     const [ cart, setCart ] = useRecoilState(cartState);   
         return <>
-        <h1>Checkout Success</h1>
-       
-     
+
         <Table>
            <h1>Payment Information</h1> 
            <tbody> 
