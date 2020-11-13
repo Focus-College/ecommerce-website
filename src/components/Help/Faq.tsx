@@ -44,6 +44,7 @@ export default function Faq (props:{}){
                         <p>Fusce suscipit, nisl et faucibus commodo, felis erat congue nunc, eget dignissim tortor magna quis nisi. Sed vestibulum mauris tincidunt dui molestie porta. Vestibulum commodo elit arcu, sed aliquet leo venenatis vitae. </p>
                     </details>
                 </Col>
+                
                 <Col>
                     <details>
                         <summary>What payment methods do you accept?</summary>
