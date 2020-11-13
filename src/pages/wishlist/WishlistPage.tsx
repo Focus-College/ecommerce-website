@@ -8,6 +8,8 @@ import MainLayout from '../../layouts/MainLayout';
 import { wishState } from './wishlist.recoil';
 import './style.scss';
 import Images from '../../images';
+import Product from '../../components/ProductList/Product'
+import {useShoppingCart} from '../cart/useShoppingCart'
 
 //nightmare comment : so to do a wish list , we need to ref wish recoil
 //structure it similarly to the rest of it?
@@ -26,8 +28,6 @@ export default function WishPage( props:{} ){
                     <th></th>
                     <th>Product</th>
                     <th className="money">Price</th>
-                    <th className="qty">Qty</th>
-                    <th className="money">Total</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,9 +40,12 @@ export default function WishPage( props:{} ){
                             {item.product.name}<br/>
                             {item.product.description}
                         </td>
-                        <td className="money">$ {item.product.price}</td>
-                        <td className="qty">{item.qty}</td>
-                        <td className="money">$ 4.99</td>
+                        <td className="money">$ {item.product.price}
+                        </td>
+                        <td>
+                        {isInCart(props) || <Button block onClick={clickAddToCartHandler}>Add to Cart</Button>}
+                        {isInCart(props) && <Button block disabled variant="success">Added to Cart!</Button>}
+                        </td>
                     </tr>
                 ))}
             </tbody>

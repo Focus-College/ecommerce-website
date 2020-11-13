@@ -9,10 +9,7 @@ import './style.scss';
 import Ribbon from '../CornerRibbon/CornerRibbon';
 import { useShoppingCart } from '../../pages/cart/useShoppingCart';
 
-import { useWishList } from '../../pages/cart/useShoppingCart';
-//we are just gonna pull it from shopping cart for now.
-//in final version necessary to be pulled into it's own document
-
+import { useWishList } from '../../pages/wishlist/useWishList';
 
 
 export default function Product( props:IProduct ){
@@ -34,7 +31,7 @@ export default function Product( props:IProduct ){
 
 
     const clickAddToWishListHandler = () => {
-        addToWish(props);
+        addToWish( props );
     }
 
 //this is not the end yeks? there is also a shopping list.
@@ -79,8 +76,8 @@ export default function Product( props:IProduct ){
                 {isInCart(props) || <Button block onClick={clickAddToCartHandler}>Add to Cart</Button>}
                 {isInCart(props) && <Button block disabled variant="success">Added to Cart!</Button>}
                       
-               {isInWish(props) || <Button block onClick={clickAddToWishListHandler}>add to wish list</Button>}
-                {isInWish(props) && <Button block disabled variant="info"> added to wishlist</Button>}
+                {isInWish(props) || <Button block onClick={clickAddToWishListHandler}>Add to Wishlist</Button>}
+                {isInWish(props) && <Button block disabled variant="info"> Added to Wishlist!</Button>}
             
             </Card.Body>
 

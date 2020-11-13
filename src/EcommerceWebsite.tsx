@@ -7,8 +7,8 @@ import Checkout from './pages/cart/CheckoutPage';
 import './App.scss';
 import { useShoppingCart } from './pages/cart/useShoppingCart';
 
-import { useWishList } from './pages/cart/useShoppingCart';
-import WishPage from './pages/cart/wishlist.test';
+import { useWishList } from './pages/wishlist/useWishList';
+import WishPage from './pages/wishlist/WishlistPage';
 
 
 export default function EcommerceWebsite( props:{} ){
