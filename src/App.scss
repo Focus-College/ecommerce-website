@@ -33,8 +33,26 @@ footer {
 #single-product-info img {
     width:300px;
     height: auto;
+    display: inline;
+    
+
+}
+.ul-about{
+    float: right;
+    width: 550px;
+    margin-top: 20px;
+    h1{
+        text-align: center;
+        font-size: 50px;
+    }
 }
 
-.product-content{
-   display: inline; 
+.product-info h2{
+  
+        font-size: 45px;
+ 
+    
 }
+
+
+
