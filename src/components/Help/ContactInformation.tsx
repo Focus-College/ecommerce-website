@@ -5,25 +5,25 @@ import  {useForm } from "react-hook-form";
 
 import './style.scss';
 
-// interface IMessage {
-//     firstName   : string,
-//     lastName    : string,
-//     telephone   : number,
-//     eEmail      : string,
-//     msgTextArea : string
-// }
-
-type FormInputs = {
+interface IMessage {
     firstName   : string,
     lastName    : string,
     telephone   : number,
     eEmail      : string,
     msgTextArea : string
-  };    
+}
+
+// type FormInputs = {
+//     firstName   : string,
+//     lastName    : string,
+//     telephone   : number,
+//     eEmail      : string,
+//     msgTextArea : string
+//   };    
 
 export default function ContactInformation() {
    
-      const { register , getValues } = useForm<FormInputs>();
+    const { register , getValues } = useForm<IMessage>();
 
     const [validated, setValidated] = useState(false);
     
@@ -36,11 +36,18 @@ export default function ContactInformation() {
                     }
                     setValidated(true);
                 };
+
+    function onClickGetValues(){
+
+        const values = getValues();
+        return values; 
+    }
+     
                
   return <>
 
-    <div className = "ContactInformation">
-        <Container fluid>
+
+        <Container fluid className = "ContactInformation">
 
         <h1>Send us your Message?</h1><br/>
              <Row>
@@ -120,10 +127,7 @@ export default function ContactInformation() {
                                     feedback="You must agree before submitting."
                                     />
                             </Form.Group>
-                            <Button variant="primary" type="submit"  onClick={() => {
-                                const values = getValues(); 
-                                console.log(values)
-                                }} block >Send
+                            <Button variant="primary" type="submit"  onClick = { onClickGetValues } block >Send
                             </Button>
                         </Col>
                         <Col xs lg="3"></Col>                        
@@ -212,7 +216,7 @@ export default function ContactInformation() {
             <hr/>
 
         </Container>
-    </div>
+
     </>;
 }
  

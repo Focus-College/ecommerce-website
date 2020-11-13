@@ -10,16 +10,23 @@
 
 }
 
+.Container {
+    background-color: #d3d3d3;
+    padding-top: 5px;
 
-.Faq {
-    min-height: 500px;
-    padding: 5px;
-    background-color: rgba(201, 192, 255, 0.25);
-}
+    .Faq {
+        min-height: 500px;
+        padding: 5px;
+        background-color: rgba(201, 192, 255, 0.25);
+    }
 
 
-iframe{
-    width:600;
-    height:600;
-    border:0;
+    iframe{
+        width:600;
+        height:600;
+        border:0;
+        p {
+            font-size: 0.8rem;
+        }
+    }
 }
