@@ -10,14 +10,19 @@ import './style.scss';
 import Images from '../../images';
 import Product from '../../components/ProductList/Product'
 import {useShoppingCart} from '../cart/useShoppingCart'
+import { IProduct } from '../../components/ProductList/HorizontalProductList';
 
 //nightmare comment : so to do a wish list , we need to ref wish recoil
 //structure it similarly to the rest of it?
 //Start from copy and onward O_o
 
-export default function WishPage( props:{} ){
+export default function WishPage( props:IProduct ){
     
     const [ wish, setList ] = useRecoilState(wishState);
+    const { isInCart, addToCart } = useShoppingCart();
+    const clickAddToCartHandler = () => {
+        addToCart( props );
+    }
 
     return <MainLayout>
         <h1>The Wish List</h1>
@@ -28,6 +33,7 @@ export default function WishPage( props:{} ){
                     <th></th>
                     <th>Product</th>
                     <th className="money">Price</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -49,31 +55,6 @@ export default function WishPage( props:{} ){
                     </tr>
                 ))}
             </tbody>
-      
-{/*           <tbody>
-                <tr>
-                    <td colSpan={2} rowSpan={5}></td>
-                    <td colSpan={2}>Subtotal</td>
-                    <td className="money">$9.98</td>
-                </tr>
-                <tr>    
-                    <td colSpan={2}>Shipping</td>
-                    <td className="money">$1.00</td>
-                </tr>
-                <tr>
-                    <td colSpan={2}>Taxes</td>
-                    <td className="money">$2.35</td>
-                </tr>
-                <tr>
-                    <td colSpan={2}>Total</td>
-                    <td className="money">$13.33</td>
-                </tr>
-                <tr>
-                    <td colSpan={3}>
-                    </td>
-                </tr>
-            </tbody> 
-*/}
         </Table>
     </MainLayout>;
 

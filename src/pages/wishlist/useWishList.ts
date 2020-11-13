@@ -18,9 +18,9 @@ export function useWishList(){
             return;
         }
         
-        const cartEntry = { product, qty: 1 };
+        const wishEntry = { product, qty: 1 };
         
-        setList([ ...wish, cartEntry ]);
+        setList([ ...wish, wishEntry ]);
 
     }
 
