@@ -34,12 +34,25 @@
 .field{
     margin-top: 10px;
     margin-bottom: 10px;
-    
-
-    
-
 }
 
 .payment-form{
     margin-bottom: 20px;
+}
+
+.checkoutFailure{
+    margin-top: 15px;
+}
+.checkoutFailure {
+    margin-top: 15px;
+
+    .failureAlert{
+        border: 1px solid salmon;
+        padding-top: 30px;
+        height: 150px;
+    }
+    Button{
+        height: 60px;
+        font-size: 20px;
+    }
 }

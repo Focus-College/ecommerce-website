@@ -29,16 +29,19 @@ export default function CheckoutFailedPage(props: {}) {
 
 
     return <>
-    
-                 <Alert variant="danger">
-            <Alert.Heading>Something went wrong!</Alert.Heading>
-            <p>
-             Please check your information and try again 
-            </p>
-        </Alert>
+
+            <div className="checkoutFailure">
+            <Alert className="failureAlert" variant="danger">
+                <Alert.Heading>Something went wrong!</Alert.Heading>
+                <p>
+                Please check your information and try again 
+                </p>
+            </Alert>
         
               <Route path="/cart/checkout"></Route>
               <Button  onClick = {redirect}  type = "submit" variant="danger" block > Go back to checkout</Button> 
+            </div>
+            
         
         </>
     

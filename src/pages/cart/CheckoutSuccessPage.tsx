@@ -6,6 +6,7 @@ import { getValueFromDenormalizedStringPath } from '../../helpers/getValueFromDe
 import { cartState } from './cart.recoil';
 import './style.scss';
 import Images from '../../images';
+import { isTemplateExpression } from 'typescript';
 
 
 export default function CheckoutSuccessPage( props:{} ){
@@ -20,16 +21,16 @@ export default function CheckoutSuccessPage( props:{} ){
                    <td>Mr.Smith</td>
                </tr>
                <tr>
-                   <td>card type: Visa </td>
-                   <td>card Data: 12345678910111213</td>
+                   <td>Card Type: Visa </td>
+                   <td>Card Data: 4520 0325 4454 8585</td>
                </tr>
                <tr>
                    <td>Total Purchase</td>
-                   <td>$1000.00</td>
+                   <td>$ 69.37</td>
                </tr>
            </tbody>
         </Table>
-        <h1>Your receipt</h1>
+        <h1>Your Receipt</h1>
 
 <Table className="checkout-table">
     <thead>
@@ -52,7 +53,7 @@ export default function CheckoutSuccessPage( props:{} ){
                 </td>
                 <td className="money">$ {item.product.price}</td>
                 <td className="qty">{item.qty}</td>
-                <td className="money">$ 4.99</td>
+                <td className="money">$ {item.product.price}</td>
             </tr>
         ))}
     </tbody>
@@ -60,19 +61,19 @@ export default function CheckoutSuccessPage( props:{} ){
         <tr>
             <td colSpan={2} rowSpan={5}></td>
             <td colSpan={2}>Subtotal</td>
-            <td className="money">$9.98</td>
+        <td className="money">$ 56.94 </td>
         </tr>
         <tr>
             <td colSpan={2}>Shipping</td>
-            <td className="money">$1.00</td>
+            <td className="money">$ 5.00</td>
         </tr>
         <tr>
             <td colSpan={2}>Taxes</td>
-            <td className="money">$2.35</td>
+            <td className="money">$ 7.43</td>
         </tr>
         <tr>
             <td colSpan={2}>Total</td>
-            <td className="money">$13.33</td>
+            <td className="money">$ 69.37</td>
         </tr>
         <tr>
             <td colSpan={3}>
