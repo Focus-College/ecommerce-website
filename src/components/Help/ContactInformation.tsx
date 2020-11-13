@@ -1,30 +1,52 @@
 import { styled } from '@material-ui/core';
 import React, { useState } from 'react';
 import {  Col, Button, Form, Container, Row, Card } from 'react-bootstrap';
+import  {useForm } from "react-hook-form";
 
 import './style.scss';
 
-interface IMessage {
+// interface IMessage {
+//     firstName   : string,
+//     lastName    : string,
+//     telephone   : number,
+//     eEmail      : string,
+//     msgTextArea : string
+// }
+
+type FormInputs = {
     firstName   : string,
     lastName    : string,
     telephone   : number,
     eEmail      : string,
     msgTextArea : string
-}
+  };    
 
+export default function ContactInformation() {
+   
+      const { register , getValues } = useForm<FormInputs>();
 
-export default function ContactInformation (prps:{}){
+    const [validated, setValidated] = useState(false);
+    
+    const handleSubmit = (event:any) => {
+                    const form = event.currentTarget;
+                
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    setValidated(true);
+                };
+               
+  return <>
 
-    return <>
-        
     <div className = "ContactInformation">
+        <Container fluid>
 
-        <Container> 
-            <h1>Send us your Message?</h1><br/>
+        <h1>Send us your Message?</h1><br/>
              <Row>
                 <Col xs lg="2" ></Col>
                 <Col>                
-                <Form >
+                <Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <Form.Row>
                         <p> 
                             Please fill out the form below to contact us with a comment or question.
@@ -35,24 +57,47 @@ export default function ContactInformation (prps:{}){
                     <Form.Row>
                         <Form.Group as={Col} controlId="firstName">
                         <Form.Label>First Name*</Form.Label>
-                            <Form.Control placeholder="John" required />
+                        <Form.Control
+                            required
+                            type="text"
+                            placeholder="First name"
+                            ref={register}
+                            name="firstName" 
+                        />
+                        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                         </Form.Group>
 
-                        <Form.Group as={Col} controlId="lastName">
+                        <Form.Group as={Col} controlId="lastName" >
                         <Form.Label>Last Name*</Form.Label>
-                            <Form.Control placeholder="Luc" required  />
+                        <Form.Control
+                                required
+                                type="text"
+                                placeholder="Last name"
+                                ref={register}
+                                name="lastName"
+                            />     
                         </Form.Group>
                     </Form.Row>
             
                     <Form.Row>
                         <Form.Group as={Col} controlId="telephone">
                             <Form.Label>Telephone</Form.Label>
-                            <Form.Control placeholder="604 666 6666" />
+                            <Form.Control
+                                placeholder="604 666 6666"
+                                ref={register}
+                                name="telephone"
+                            />
                         </Form.Group>
                         
-                        <Form.Group as={Col} controlId="eEmail" required>
+                        <Form.Group as={Col} controlId="eEmail" >
                             <Form.Label>Email*</Form.Label>
-                            <Form.Control type="email" placeholder="John@email.com" required />
+                            <Form.Control  
+                                type="email" 
+                                placeholder="John@email.com" 
+                                required 
+                                ref={register} 
+                                name="email"
+                            />
                         </Form.Group>
                     </Form.Row>
                                     
@@ -61,7 +106,11 @@ export default function ContactInformation (prps:{}){
                         <Col >
                             <Form.Group controlId="msgTextArea" >
                                 <Form.Label>Please, write your message*</Form.Label>
-                                <Form.Control as="textarea" rows={4} required />                       
+                                <Form.Control as="textarea"   rows={4} 
+                                    required 
+                                    ref={register} 
+                                    name="msgTextArea"
+                                />                       
                             </Form.Group>
 
                             <Form.Group  controlId="checkAgree">
@@ -71,7 +120,11 @@ export default function ContactInformation (prps:{}){
                                     feedback="You must agree before submitting."
                                     />
                             </Form.Group>
-                            <Button variant="primary" type="submit" block>Send</Button>
+                            <Button variant="primary" type="submit"  onClick={() => {
+                                const values = getValues(); 
+                                console.log(values)
+                                }} block >Send
+                            </Button>
                         </Col>
                         <Col xs lg="3"></Col>                        
                     </Row>   
@@ -157,20 +210,9 @@ export default function ContactInformation (prps:{}){
                 </Col>     
             </Row>
             <hr/>
+
         </Container>
-           
     </div>
-    
     </>;
-
-
-
-
-
-    
-
-    
 }
-
-
-  
+ 
