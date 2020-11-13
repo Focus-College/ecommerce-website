@@ -1,11 +1,8 @@
 import React from 'react'
 import MainLayout from '../layouts/MainLayout';
-import Product from '../components/ProductList/Product';
 import { IProduct } from '../components/ProductList/HorizontalProductList';
 import HorizontalProductList from '../components/ProductList/HorizontalProductList';
 import Images from '../images';
-import { getValueFromDenormalizedStringPath } from '../helpers/getValueFromDenormalizedStringPath';
-import { Col, Container, Row, Tab, Table, Tabs } from 'react-bootstrap';
 import Reviews_QandA_Tab from '../components/Reviews_QandA/Reviews_QandA_Tab';
 import { Rating } from '@material-ui/lab';
 

@@ -1,15 +1,10 @@
 import React from 'react'
-import { Route, Switch } from 'react-router';
-import Form from 'react-bootstrap/Form'
+import { Route } from 'react-router';
 import Button from 'react-bootstrap/Button'
-import CheckoutSuccess from './CheckoutSuccessPage';
-import CheckoutFailure from './CheckoutFailedPage';
-import MainLayout from '../../layouts/MainLayout';
-import { Alert, Col } from 'react-bootstrap';
+
+import { Alert} from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import { error } from 'console';
-import { pathToFileURL } from 'url';
-import CheckoutPage from "./CheckoutPage"
+
 
 
 

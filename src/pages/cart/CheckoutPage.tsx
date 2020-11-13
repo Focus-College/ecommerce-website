@@ -1,22 +1,12 @@
-import React, { Component, useState } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import CheckoutSuccess from './CheckoutSuccessPage';
 import CheckoutFailure from './CheckoutFailedPage';
 import MainLayout from '../../layouts/MainLayout';
-//import StripeCheckout, { StripeCheckoutProps } from 'react-stripe-checkout';
-import { LinkContainer } from 'react-router-bootstrap';
-import CheckoutSuccessPage from './CheckoutSuccessPage';
-import { render } from 'react-dom';
-import { text } from '@fortawesome/fontawesome-svg-core';
-import { ReactComponent } from '*.svg';
-import { ChangeEvent } from 'react';
-import CheckoutFailedPage from './CheckoutFailedPage';
-import { isNumber } from 'lodash';
-import { Icart } from './cart.recoil';
 import { useHistory } from 'react-router-dom';
-import { Col} from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 
 function randomRedirect():string{

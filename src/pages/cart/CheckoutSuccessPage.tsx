@@ -1,10 +1,8 @@
 import React from 'react'
 import { Button, Image, Table } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { getValueFromDenormalizedStringPath } from '../../helpers/getValueFromDenormalizedStringPath';
-import MainLayout from '../../layouts/MainLayout';
 import { cartState } from './cart.recoil';
 import './style.scss';
 import Images from '../../images';

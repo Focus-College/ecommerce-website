@@ -1,5 +1,5 @@
 import React from 'react';
-import { atom, selector } from 'recoil';
+import { atom  } from 'recoil';
 import { IProduct } from '../../components/ProductList/HorizontalProductList';
 
 export interface ICartEntry {
