@@ -114,7 +114,7 @@ export default function CheckoutPage(props: any) {
             <Col className= "field">
               <Form.Control
               type = "text"
-              placeholder="Name" />
+              placeholder="Name on Card" />
             </Col>
           </Form.Row>
           <Form.Row>

@@ -8,7 +8,7 @@ import './style.scss';
 
 import Ribbon from '../CornerRibbon/CornerRibbon';
 import { useShoppingCart } from '../../pages/cart/useShoppingCart';
-import { useHistory } from 'react-router';
+
 import { useWishList } from '../../pages/wishlist/useWishList';
 import { Link } from 'react-router-dom';
 
