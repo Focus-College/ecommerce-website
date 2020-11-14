@@ -37,23 +37,29 @@ footer {
     
 
 }
-.ul-about{
+.product-content{
     float: right;
     width: 550px;
     margin-top: 20px;
-    h1{
+    p{
+        text-align: center;  
+        padding-top: 30px;   
+        
+    } h1{
         text-align: center;
-        font-size: 50px;
     }
 }
 
-.product-info h2{
-  
-        font-size: 45px;
- 
-    
+.product-info {
+    height: 150px;
+    h2{
+        font-size: 45px; 
+    } 
 }
-
+.product-buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
 .product-title{
     outline-style: solid;
 }

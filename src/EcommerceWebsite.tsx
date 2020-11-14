@@ -43,7 +43,7 @@ export default function EcommerceWebsite( props:{} ){
                     <Route path="/wishlist" component={WishPage} />
                     <Route path="/help" component={Help} />
                     <Route path="/cart/checkout" component={Checkout} />
-                    <Route path="/product" component={ProductPage} />
+                    <Route path="/product/:id" component={ProductPage} />
                     <Route path="/cart" component={ShoppingCart} />
                     <Route path="/" component={HomePage} />
 

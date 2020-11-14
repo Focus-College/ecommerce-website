@@ -1,4 +1,4 @@
-export function normalizeFileName( filename:string ){
+export  function normalizeFileName( filename:string ){
 
     return filename
         
