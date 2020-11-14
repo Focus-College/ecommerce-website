@@ -10,6 +10,7 @@ import Ribbon from '../CornerRibbon/CornerRibbon';
 import { useShoppingCart } from '../../pages/cart/useShoppingCart';
 import { useHistory } from 'react-router';
 import { useWishList } from '../../pages/wishlist/useWishList';
+import { Link } from 'react-router-dom';
 
 
 export default function Product( props:IProduct ){
@@ -17,13 +18,6 @@ export default function Product( props:IProduct ){
     const { isInCart, addToCart } = useShoppingCart();
     const [ showClearance, setShowClearance ] = useState( false );
     const { isInWish, addToWish} = useWishList();
-
-        //used for onclick redirect for product title
-    let history = useHistory();
-    const redirect = () => {
-    history.push("/product")
-    }
-
 
     useEffect(() => {
         setShowClearance( props.price.substr(-2,2) === "45" );
@@ -42,7 +36,7 @@ export default function Product( props:IProduct ){
             { showClearance && <Ribbon msg="Clearance" placement="right" /> }
             { props.image && <Card.Img variant="top" src={getValueFromDenormalizedStringPath(Images, props.image)} /> }
             <Card.Body>
-                <Card.Title onClick={redirect}>{props.name}</Card.Title>
+                <Card.Title><Link to={`/product/${props.productNo}`}>{props.name}</Link></Card.Title>
                 <Card.Text className="product-description">
                     {props.description}
                 </Card.Text>

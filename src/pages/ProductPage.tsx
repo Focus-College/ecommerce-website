@@ -1,12 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import MainLayout from '../layouts/MainLayout';
 import { IProduct } from '../components/ProductList/HorizontalProductList';
 import HorizontalProductList from '../components/ProductList/HorizontalProductList';
 import Images from '../images';
 import Reviews_QandA_Tab from '../components/Reviews_QandA/Reviews_QandA_Tab';
 import { Rating } from '@material-ui/lab';
+import { useParams } from 'react-router';
+import { productListState } from '../components/ProductList/product.recoil';
+import { useRecoilValue } from 'recoil';
 
 export default function ProductPage( props:IProduct ){
+
+    const params = useParams<{ id: string }>();
+    const productsList = useRecoilValue<IProduct[]>(productListState);
+    const [ product, setProduct ] = useState<IProduct>();
+
+    useEffect(() => {
+        setProduct(productsList.find( _product => _product.productNo === params.id ));
+    }, [])
+
+    // guard for empty product value
+    if(!product){
+        return <MainLayout></MainLayout>;
+    }
 
     return <MainLayout>
         
@@ -14,7 +30,7 @@ export default function ProductPage( props:IProduct ){
         <section id="single-product-info">
                 <img src={Images.nivea.products.aloeHydro} alt="Nivea Products"/>
                 <div className="ul-about">
-                    <h1 className="product-title">Aloe-Hydro</h1>
+                    <h1 className="product-title">{product.name}</h1>
                     <hr/>
                 <ul>
                     <li>
