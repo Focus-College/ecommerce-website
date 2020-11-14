@@ -35,7 +35,7 @@ export default function ProductFilter( props:{
         props.searchDispatch({
             name: searchTerm,
             brand: searchBrand,
-            category: searchCategory,
+            category: searchCategory
         });
     }, [ searchTerm, searchCategory, searchBrand ]);
 
