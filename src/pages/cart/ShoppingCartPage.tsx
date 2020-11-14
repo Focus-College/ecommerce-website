@@ -1,16 +1,51 @@
-import React from 'react'
+import React, { MouseEvent } from 'react'
+import { cartState, ICartEntry } from '../../pages/cart/cart.recoil';
 import { Button, Image, Table } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useRecoilState } from 'recoil';
 import { getValueFromDenormalizedStringPath } from '../../helpers/getValueFromDenormalizedStringPath';
 import MainLayout from '../../layouts/MainLayout';
-import { cartState } from './cart.recoil';
 import './style.scss';
 import Images from '../../images';
-
-export default function Homepage( props:{} ){
+export default function Homepage(props:{} ) {
     
     const [ cart, setCart ] = useRecoilState(cartState);
+
+    function onClickAdd(index:number) {
+        return function updateItemInCart(event:MouseEvent<HTMLButtonElement>)
+        {
+            const cartItem = {...cart[index]};
+            let fullCart = [...cart]
+            cartItem.qty++;
+            fullCart[index] = cartItem;
+            setCart(fullCart);
+        }
+    }
+
+    function onClickSubtract(index:number) {
+        return function RemoveItemFromCart(event:MouseEvent<HTMLButtonElement>)
+        {
+            const cartItem = {...cart[index]};
+            let fullCart = [...cart]
+            if(cartItem.qty > 1)
+            {
+                 cartItem.qty--;
+            }
+            fullCart[index] = cartItem;
+            setCart(fullCart);
+        }
+    }
+
+    const setCartState = ( data:ICartEntry[] ) => {
+        window.localStorage.setItem('storedCartState', JSON.stringify(data));
+        setCart( data );
+    }
+
+    function removeFromCart(product:any) {
+        const newList = cart.filter((item) => item.product !== product);
+        setCartState( newList );
+    }
+
 
     return <MainLayout>
         <h1>Shopping Cart Page</h1>
@@ -22,11 +57,12 @@ export default function Homepage( props:{} ){
                     <th>Product</th>
                     <th className="money">Price</th>
                     <th className="qty">Qty</th>
+                    
                     <th className="money">Total</th>
                 </tr>
             </thead>
             <tbody>
-                { cart.map( item => (
+                { cart.map((item, index) => (
                     <tr>
                         <td>
                             { item.product.image && <Image src={getValueFromDenormalizedStringPath(Images, item.product.image)} /> }
@@ -36,7 +72,16 @@ export default function Homepage( props:{} ){
                             {item.product.description}
                         </td>
                         <td className="money">$ {item.product.price}</td>
-                        <td className="qty">{item.qty}</td>
+                        <td className="qty">
+                            <button className="btnAddQty" onClick={onClickAdd(index)}> + </button> 
+                            {item.qty}
+                            <button className="btnSubQty" onClick = {onClickSubtract(index)}> - </button> 
+
+                            <div>
+                            <button className="btnRemoveItem" type="button" onClick={() => removeFromCart(item.product)}>Remove</button>
+                            </div>
+                        </td>
+                        
                         <td className="money">$ 4.99</td>
                     </tr>
                 ))}

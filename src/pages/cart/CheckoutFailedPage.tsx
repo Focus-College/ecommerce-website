@@ -1,10 +1,11 @@
 import React from 'react'
 import { Route } from 'react-router';
 import Button from 'react-bootstrap/Button'
+import MainLayout from '../../layouts/MainLayout'
+
 
 import { Alert} from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-
 
 
 

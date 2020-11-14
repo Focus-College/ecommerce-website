@@ -41,3 +41,12 @@ export const brandsState = selector({
 
     }
 })
+
+export const pricesState = selector({
+    key: 'pricesState',
+    get: ({get}) => {
+        return get(productListState).map( product => product.price ).filter(( price:string, index:number, brands:string[] ) => {
+            return brands.indexOf(price) === index;
+        }).filter( brand => !!brand );
+    }
+})

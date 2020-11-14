@@ -9,12 +9,14 @@ import './style.scss';
 import Ribbon from '../CornerRibbon/CornerRibbon';
 import { useShoppingCart } from '../../pages/cart/useShoppingCart';
 import { useHistory } from 'react-router';
+import { useWishList } from '../../pages/wishlist/useWishList';
 
 
 export default function Product( props:IProduct ){
 
     const { isInCart, addToCart } = useShoppingCart();
     const [ showClearance, setShowClearance ] = useState( false );
+    const { isInWish, addToWish} = useWishList();
 
         //used for onclick redirect for product title
     let history = useHistory();
@@ -26,6 +28,10 @@ export default function Product( props:IProduct ){
     useEffect(() => {
         setShowClearance( props.price.substr(-2,2) === "45" );
     }, []);
+
+    const clickAddToWishListHandler = () => {
+        addToWish( props );
+    }
 
     const clickAddToCartHandler = () => {
         addToCart( props );
@@ -42,6 +48,8 @@ export default function Product( props:IProduct ){
                 </Card.Text>
                 {isInCart(props) || <Button block onClick={clickAddToCartHandler}>Add to Cart</Button>}
                 {isInCart(props) && <Button block disabled variant="success">Added to Cart!</Button>}
+                {isInWish(props) || <Button block onClick={clickAddToWishListHandler}>Add to Wishlist</Button>}
+                {isInWish(props) && <Button block disabled variant="info"> Added to Wishlist!</Button>}
             </Card.Body>
             <Card.Footer>
                 <div>
