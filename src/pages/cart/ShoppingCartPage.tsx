@@ -96,7 +96,7 @@ export default function Homepage(props:{} ) {
                         </td>
                         <td className="money">$ {item.product.price}</td>
                         <td className="qty">
-                            <button className="btnAddQty" onClick={onClickAdd(index)}> + </button> 
+                            <button className="btnAddQty" onClick= {onClickAdd(index)}> + </button> 
                             {item.qty}
                             <button className="btnSubQty" onClick = {onClickSubtract(index)}> - </button> 
 
