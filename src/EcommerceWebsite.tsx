@@ -4,9 +4,9 @@ import HomePage from './pages/HomePage';
 import ShoppingCart from './pages/cart/ShoppingCartPage';
 import Help from './pages/HelpPage';
 import Checkout from './pages/cart/CheckoutPage';
+import ProductPage from './pages/ProductPage';
 import './App.scss';
 import { useShoppingCart } from './pages/cart/useShoppingCart';
-
 import { useWishList } from './pages/wishlist/useWishList';
 import WishPage from './pages/wishlist/WishlistPage';
 
@@ -43,8 +43,11 @@ export default function EcommerceWebsite( props:{} ){
                     <Route path="/wishlist" component={WishPage} />
                     <Route path="/help" component={Help} />
                     <Route path="/cart/checkout" component={Checkout} />
+                    <Route path="/product" component={ProductPage} />
                     <Route path="/cart" component={ShoppingCart} />
                     <Route path="/" component={HomePage} />
+
+    
                 </Switch>
             </BrowserRouter>
         </div>
