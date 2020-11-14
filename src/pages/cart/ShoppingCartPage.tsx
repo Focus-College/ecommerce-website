@@ -8,6 +8,7 @@ import MainLayout from '../../layouts/MainLayout';
 import './style.scss';
 import Images from '../../images';
 export default function Homepage(props:{} ) {
+    const shipping = 15.87;
     
     const [ cart, setCart ] = useRecoilState(cartState);
 
@@ -19,6 +20,7 @@ export default function Homepage(props:{} ) {
             cartItem.qty++;
             fullCart[index] = cartItem;
             setCart(fullCart);
+            setCartState( fullCart );
         }
     }
 
@@ -33,6 +35,7 @@ export default function Homepage(props:{} ) {
             }
             fullCart[index] = cartItem;
             setCart(fullCart);
+            setCartState( fullCart );
         }
     }
 
@@ -44,6 +47,26 @@ export default function Homepage(props:{} ) {
     function removeFromCart(product:any) {
         const newList = cart.filter((item) => item.product !== product);
         setCartState( newList );
+    }
+
+    function subTotal () {
+        let totalPrice = 0
+        for (let I = 0; I < cart.length; I++ ) {
+            totalPrice += Number (cart[I].product.price) * cart[I].qty
+        }
+        return totalPrice.toFixed(2)
+    }
+
+    function totalPrice (){
+        let test = Number (subTotal())
+        test = test * 1.15 + shipping;
+        return test.toFixed(2);
+    }
+
+    function setTax (){
+        let taxes = Number (subTotal())
+        taxes = taxes * 0.15
+        return taxes;
     }
 
 
@@ -82,7 +105,7 @@ export default function Homepage(props:{} ) {
                             </div>
                         </td>
                         
-                        <td className="money">$ 4.99</td>
+                        <td className="money">$ {((item.qty) * Number (item.product.price)).toFixed(2)}</td>
                     </tr>
                 ))}
             </tbody>
@@ -90,19 +113,19 @@ export default function Homepage(props:{} ) {
                 <tr>
                     <td colSpan={2} rowSpan={5}></td>
                     <td colSpan={2}>Subtotal</td>
-                    <td className="money">$9.98</td>
+                    <td className="money">$ {subTotal()}</td>
                 </tr>
                 <tr>
                     <td colSpan={2}>Shipping</td>
-                    <td className="money">$1.00</td>
+                    <td className="money">$ {shipping}</td>
                 </tr>
                 <tr>
                     <td colSpan={2}>Taxes</td>
-                    <td className="money">$2.35</td>
+                    <td className="money">$ {setTax().toFixed(2)}</td>
                 </tr>
                 <tr>
                     <td colSpan={2}>Total</td>
-                    <td className="money">$13.33</td>
+                    <td className="money">$ {totalPrice()}</td>
                 </tr>
                 <tr>
                     <td colSpan={3}>
