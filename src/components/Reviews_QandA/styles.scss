@@ -1,0 +1,45 @@
+//Q and A stylings
+.title-text{
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;  
+}
+
+.qAnda-text{
+    display: flex;
+   align-items: center;
+   font-size: 17px;
+}
+
+.qAnda-container{
+    border: .5px solid black;
+    border-radius: 5px;
+    box-shadow: 3px 5px #bdbcbc;
+    margin-top: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.qAnda-section{
+    padding:30px 0px 30px 0px;
+}
+
+.askQuestion .questionTitle{
+font-size: 35px;
+font-weight: 500;
+}
+
+.askQuestion button{
+    margin-top: 10px;
+    box-shadow: 1.5px 1.5   px #bdbcbc;
+}
+.review-content{
+
+    text-align: justify;
+    width: 80%;
+}
+
+.review-section{
+    padding: 20px;
+}

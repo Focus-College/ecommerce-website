@@ -1,0 +1,33 @@
+
+
+.ContactInformation{
+
+    position: relative;
+    min-height: 300px;
+    padding: 15px;
+    // background-color: rgba(210, 255, 192, 0.25);
+
+
+}
+
+.Container {
+    background-color: #f1efef;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    .Faq {
+        min-height: 500px;
+        padding: 5px;
+        background-color: rgba(201, 192, 255, 0.25);
+    }
+
+
+    iframe{
+        width:600;
+        height:600;
+        border:0;
+        p {
+            font-size: 0.8rem;
+        }
+    }
+}

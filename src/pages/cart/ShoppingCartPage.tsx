@@ -109,6 +109,7 @@ export default function Homepage(props:{} ) {
                         <LinkContainer to="/cart/checkout">
                             <Button variant="warning" block>Proceed to Checkout</Button>
                         </LinkContainer>
+
                     </td>
                 </tr>
             </tbody>

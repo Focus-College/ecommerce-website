@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ShoppingCart from './pages/cart/ShoppingCartPage';
-import Wishlist from './pages/WishlistPage';
 import Help from './pages/HelpPage';
 import Checkout from './pages/cart/CheckoutPage';
+import ProductPage from './pages/ProductPage';
 import './App.scss';
 import { useShoppingCart } from './pages/cart/useShoppingCart';
+import { useWishList } from './pages/wishlist/useWishList';
+import WishPage from './pages/wishlist/WishlistPage';
+
 
 export default function EcommerceWebsite( props:{} ){
 
@@ -14,24 +17,37 @@ export default function EcommerceWebsite( props:{} ){
 
     const { setCartState } = useShoppingCart();
 
+    const { setWishState } = useWishList(); 
+
     useEffect(() => {
 
         const cartContents = window.localStorage.getItem('storedCartState');
         cartContents && setCartState( JSON.parse( cartContents ));
 
     }, [])
-    
+
+    useEffect(() => {
+
+        const wishContents = window.localStorage.getItem('storedWishState');
+        wishContents && setWishState( JSON.parse( wishContents ));
+
+    }, [])
+
+
 
     return (
         <div className={`ecommerce ${isDarkMode && "dark"}`}>
             
-            <BrowserRouter>
+            <BrowserRouter> 
                 <Switch>
-                    <Route path="/wishlist" component={Wishlist} />
+                    <Route path="/wishlist" component={WishPage} />
                     <Route path="/help" component={Help} />
                     <Route path="/cart/checkout" component={Checkout} />
+                    <Route path="/product" component={ProductPage} />
                     <Route path="/cart" component={ShoppingCart} />
                     <Route path="/" component={HomePage} />
+
+    
                 </Switch>
             </BrowserRouter>
         </div>

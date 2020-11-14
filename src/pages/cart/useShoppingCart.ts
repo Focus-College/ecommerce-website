@@ -1,6 +1,5 @@
 import { cartState, ICartEntry } from '../../pages/cart/cart.recoil';
 import { useRecoilState } from 'recoil';
-import { useState } from 'react';
 import { IProduct } from '../../components/ProductList/HorizontalProductList';
 
 export function useShoppingCart(){
