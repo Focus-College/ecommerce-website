@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {MouseEvent} from 'react'
 import { Button, Image, Table } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Link } from 'react-router-dom'
@@ -20,8 +20,11 @@ export default function WishPage( props:IProduct ){
     
     const [ wish, setList ] = useRecoilState(wishState);
     const { isInCart, addToCart } = useShoppingCart();
-    const clickAddToCartHandler = () => {
-        addToCart( props );
+    
+    function clickAddToCartHandler(product:IProduct){
+        return function cartAdder(event:MouseEvent<HTMLButtonElement>){
+            addToCart( product );
+        }
     }
 
     return <MainLayout>
@@ -37,10 +40,10 @@ export default function WishPage( props:IProduct ){
                 </tr>
             </thead>
             <tbody>
-                { wish.map( item => (
+                { wish.map( (item) => (
                     <tr>
                         <td>
-                            { item.product.image && <Image src={getValueFromDenormalizedStringPath(Images, item.product.image)} /> }
+                            {item.product.image && <Image src={getValueFromDenormalizedStringPath(Images, item.product.image)} /> }
                         </td>
                         <td className="product">
                             {item.product.name}<br/>
@@ -49,8 +52,8 @@ export default function WishPage( props:IProduct ){
                         <td className="money">$ {item.product.price}
                         </td>
                         <td>
-                        {isInCart(props) || <Button block onClick={clickAddToCartHandler}>Add to Cart</Button>}
-                        {isInCart(props) && <Button block disabled variant="success">Added to Cart!</Button>}
+                        {isInCart(item.product) || <Button block onClick={clickAddToCartHandler(item.product)}>Add to Cart</Button>}
+                        {isInCart(item.product) && <Button block disabled variant="success">Added to Cart!</Button>}
                         </td>
                     </tr>
                 ))}

@@ -21,7 +21,7 @@ export default function ProductPage(){
 
     useEffect(() => {
         setProduct(productsList.find( _product => _product.productNo === params.id ));
-    }, [])
+    }, [params.id])
 
 
     const { isInCart, addToCart } = useShoppingCart();

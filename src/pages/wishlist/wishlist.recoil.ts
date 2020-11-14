@@ -9,7 +9,6 @@ import { IProduct } from '../../components/ProductList/HorizontalProductList';
 
 export interface WlistEntry {
     product: IProduct;
-    qty: number;
 }
 
 

@@ -1,14 +1,11 @@
 import { getValueFromDenormalizedStringPath } from '../../helpers/getValueFromDenormalizedStringPath';
 import Images from '../../images';
-
 import React, { useEffect, useState } from 'react';
 import { Badge, Button, Card } from 'react-bootstrap';
 import { IProduct } from './HorizontalProductList';
-import './style.scss';
-
+import './style.scss'
 import Ribbon from '../CornerRibbon/CornerRibbon';
 import { useShoppingCart } from '../../pages/cart/useShoppingCart';
-
 import { useWishList } from '../../pages/wishlist/useWishList';
 import { Link } from 'react-router-dom';
 
