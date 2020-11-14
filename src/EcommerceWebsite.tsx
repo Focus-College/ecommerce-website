@@ -12,7 +12,7 @@ import WishPage from './pages/wishlist/WishlistPage';
 
 
 export default function EcommerceWebsite( props:{} ){
-
+    
     const [ isDarkMode, setDarkMode ] = useState<boolean>( window.localStorage.getItem('darkMode') === 'true' );
 
     const { setCartState } = useShoppingCart();
