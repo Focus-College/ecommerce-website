@@ -43,7 +43,7 @@ export default function CheckoutPage(props: any) {
       <Route path="/cart/checkout/failure" component={CheckoutFailure} />
       <Route path="/cart/checkout/success" component={CheckoutSuccess}/>
       <Route path="/cart/checkout">
-<h1 className="Checkout-title">Checkout information</h1>
+<h1 className="Checkout-title">Checkout Information</h1>
         <Form>
           <div className="shippingInfo">
             <Form.Row>
