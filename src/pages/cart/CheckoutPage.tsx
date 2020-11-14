@@ -40,7 +40,7 @@ export default function CheckoutPage(props: any) {
   return <MainLayout>{
 
     <Switch>
-      <Route path="/cart/checkout/failure" component={CheckoutFailure} />
+      <Route path="/cart/checkout/failure" component={CheckoutFailure}/>
       <Route path="/cart/checkout/success" component={CheckoutSuccess}/>
       <Route path="/cart/checkout">
 <h1 className="Checkout-title">Checkout Information</h1>

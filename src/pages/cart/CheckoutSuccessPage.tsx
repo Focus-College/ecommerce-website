@@ -10,7 +10,12 @@ import { isTemplateExpression } from 'typescript';
 
 
 export default function CheckoutSuccessPage( props:{} ){
-    const [ cart, setCart ] = useRecoilState(cartState);   
+    const [ cart, setCart ] = useRecoilState(cartState);
+    function getSum(total:number, num:number){ return total + num}
+    const subtotal = cart.map( item => +item.product.price * item.qty ).reduce(getSum,0)
+    const taxrate = 0.12
+    const shipping = 5
+
         return <>
 <h1 className="Success-title">Checkout Success, Thank You</h1>
         <Table className="success-table">
@@ -53,7 +58,7 @@ export default function CheckoutSuccessPage( props:{} ){
                 </td>
                 <td className="money">$ {item.product.price}</td>
                 <td className="qty">{item.qty}</td>
-                <td className="money">$ {item.product.price}</td>
+                <td className="money">$ {(+item.product.price*item.qty).toFixed(2)}</td>
             </tr>
         ))}
     </tbody>
@@ -61,19 +66,19 @@ export default function CheckoutSuccessPage( props:{} ){
         <tr>
             <td colSpan={2} rowSpan={5}></td>
             <td colSpan={2}>Subtotal</td>
-        <td className="money">$ 56.94 </td>
+        <td className="money">$ {(subtotal).toFixed(2)}</td>
         </tr>
         <tr>
             <td colSpan={2}>Shipping</td>
-            <td className="money">$ 5.00</td>
+        <td className="money">$ {(shipping).toFixed(2)}</td>
         </tr>
         <tr>
             <td colSpan={2}>Taxes</td>
-            <td className="money">$ 7.43</td>
+            <td className="money">$ {(subtotal*taxrate).toFixed(2)}</td>
         </tr>
         <tr>
             <td colSpan={2}>Total</td>
-            <td className="money">$ 69.37</td>
+            <td className="money">$ {((subtotal*(1+taxrate))+shipping).toFixed(2)}</td>
         </tr>
         <tr>
             <td colSpan={3}>
