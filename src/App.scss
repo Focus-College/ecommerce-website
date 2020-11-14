@@ -34,20 +34,28 @@ footer {
     width:300px;
     height: auto;
     display: inline;
+    margin-top: 30px;
     
 
 }
 .product-content{
     float: right;
     width: 550px;
-    margin-top: 20px;
+    margin-top:40px;
+    
+    h1{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    hr{
+        margin-bottom: 40px; 
+    }
     p{
+        font-weight: 600;
         text-align: center;  
         padding-top: 30px;   
         
-    } h1{
-        text-align: center;
-    }
+    } 
 }
 
 .product-info {
@@ -63,4 +71,3 @@ footer {
 .product-title{
     outline-style: solid;
 }
-
