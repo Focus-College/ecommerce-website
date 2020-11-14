@@ -6,7 +6,7 @@ import CheckoutSuccess from './CheckoutSuccessPage';
 import CheckoutFailure from './CheckoutFailedPage';
 import MainLayout from '../../layouts/MainLayout';
 import { useHistory } from 'react-router-dom';
-import { Col } from 'react-bootstrap';
+import { Col, FormLabel } from 'react-bootstrap';
 
 
 function randomRedirect():string{
@@ -108,18 +108,26 @@ export default function CheckoutPage(props: any) {
 
         <Form className="payment-form">
 
-
+          
+        <h2 className="Checkout-title">Credit Card Information</h2>
+            
           <Form.Row>
 
             <Col className= "field">
+            <Form.Label>
+            CardHolder Name
+            </Form.Label>
               <Form.Control
               type = "text"
-              placeholder="Name on Card" />
+              placeholder="cardHolder Name" />
             </Col>
           </Form.Row>
           <Form.Row>
 
             <Col className= "field">
+            <Form.Label>
+            Card Number
+            </Form.Label>
               <Form.Control 
               maxLength = {16}
               placeholder="cardNumber" />
@@ -130,12 +138,18 @@ export default function CheckoutPage(props: any) {
 
 
             <Col className= "field">
+            <Form.Label>
+            Expiry Date
+            </Form.Label>
               <Form.Control
                 maxLength= {5}
                 placeholder="M/Y "
  />
             </Col>
             <Col className= "field">
+            <Form.Label>
+            CVC
+            </Form.Label>
               <Form.Control
                 maxLength={3}
                 placeholder="CVC "

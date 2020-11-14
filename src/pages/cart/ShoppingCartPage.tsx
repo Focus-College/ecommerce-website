@@ -8,6 +8,7 @@ import MainLayout from '../../layouts/MainLayout';
 import './style.scss';
 import Images from '../../images';
 export default function Homepage(props:{} ) {
+    
     const shipping = 15.87;
     
     const [ cart, setCart ] = useRecoilState(cartState);
