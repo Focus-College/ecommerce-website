@@ -61,6 +61,6 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/webpack-env": "^1.15.2",
     "gh-pages": "^2.2.0",
-    "node-sass": "^4.14.1"
+    "node-sass": "^7.0.0"
   }
 }
